@@ -1,15 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page</title>
+    <!-- css file  -->
+    <link rel="stylesheet" href="/sass/main.css">
 </head>
+
 <body>
+    <!-- global conteiner -->
+    <div class="conteiner">
 
-<div>
+        <nav>
+            <div class="conteiner-nav">
+                <div class="topnav" id="myTopnav">
+                    <div class="link-side">
+                        <a href="" class="TMDB">TMDB</a>
+                        <a href="">Фильмы</a>
+                        <a href="">Сериалы</a>
+                        <a href="">Люди</a>
+                        <a href="">Ещё</a>
 
-</div>
-  
+                    </div>
+                    <div class="search-side">
+                        <a href="">Войти</a>
+                        <a href="">Присоединиться к TMDB</a>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <a href="javascript:void(0);" class="icon" onclick="navTogle()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="search-movie">
+                    <div class="title">
+                        <h1>Добро пожаловать.</h1>
+                        <h2>Миллионы фильмов, сериалов и людей. Исследуйте сейчас.</h2>
+                    </div>
+                    <div class="search-content">
+                        <input type="text" class="inp-search" placeholder="Найти фильм, сериал, персону......"
+                            autofill="off">
+                        <button class="search-btn">search</button>
+
+                    </div>
+                </div>
+
+
+                <div class="oscars">
+                    <div class="oscars-text">
+                        <h1>Oscars</h1>
+                        <button class="win-btn">wiew the winners →</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="trending">
+                <div class="togle">
+                    <h1>Trending</h1>
+                    <input type="checkbox" id="check" class="check">
+                    <label for="check" class="togle-tap">
+                        <p>today</p>
+                        <p>this week</p>
+                    </label>
+                </div>
+                <div class="card">
+                    <div class="card-border">
+                        <img src="/assets/img/images.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="lastest-trailers">
+                <div class="togle">
+                    <h1>lastest trailers</h1>
+                    <input type="checkbox" id="checkk" class="check">
+                    <label for="checkk" class="togle-tap">
+                        <p>today</p>
+                        <p>this week</p>
+                    </label>
+                </div>
+            </div>
+            <div class="jointoday">
+                <div class="text">
+                    <h1>Join Today</h1>
+                    <p>
+                        Get access to maintain your own custom personal lists, track what you've seen and search and
+                        <br>
+                        filter
+                        for what to watch next—regardless if it's in theatres, on TV or available <br> on popular
+                        streaming
+                        services like Netflix, Amazon Prime Video, Disney Plus, Apple TV <br> Plus, and Hulu.
+                    </p>
+                    <button>sign-up</button>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li>Enjoy TMDB ad free</li>
+                        <li>Maintain a personal watchlist</li>
+                        <li>Filter by your subscribed streaming services and find something to watch</li>
+                        <li>Log the movies and TV shows you've seen</li>
+                        <li>Build custom lists</li>
+                        <li>Contribute to and improve our database</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="footer">
+                <div class="img">
+                    <img src="/assets/img/2560px-Tmdb.new.logo.svg.png" alt="">
+                    <button>join the comunity</button>
+                </div>
+                <div class="text-1">
+                    <h2>THE BASICS</h2>
+                    <p>About TMDB</p>
+                    <p>contact us</p>
+                    <p>support forums</p>
+                    <p>api</p>
+                    <p>system status</p>
+                </div>
+                <div class="text-2">
+                    <h2>GET INVOLVED</h2>
+                    <p>Contribution Bible</p>
+                    <p>Add New Movie</p>
+                    <p>Add New TV Show</p>
+                </div>
+                <div class="text-3">
+                    <h2>COMMUNITY</h2>
+                    <p>Guidelines</p>
+                    <p>Discussions</p>
+                    <p>Leaderboard</p>
+                </div>
+                <div class="text-4">
+                    <h2>LEGAL</h2>
+                    <p>Terms of Use</p>
+                    <p>API Terms of Use</p>
+                    <p>Privacy Policy</p>
+                    <p>DMCA Policy</p>
+                </div>
+            </div>
+        </nav>
+        </conteiner>
+
+        <div class="tugma-test">
+            <p>salom</>
+            <p>alik</p>
+            <p>hayr</p>
+        </div>
+
+        <script src="../js/main.js"></script>
+
 </body>
+
 </html>
