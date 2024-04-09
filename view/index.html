@@ -13,12 +13,17 @@
     <!-- global conteiner -->
     <div class="conteiner">
 
-        <nav>
+        <section class="global-content">
             <div class="conteiner-nav">
                 <div class="topnav" id="myTopnav">
                     <div class="link-side">
                         <a href="" class="TMDB">TMDB</a>
-                        <a href="">Фильмы</a>
+                        <a href="">Фильмы <div style="display: none;" class="click">
+                                <a href="">popular</a>
+                                <a href="">popular movies</a>
+                                <a href="">About</a>
+                            </div></a>
+
                         <a href="">Сериалы</a>
                         <a href="">Люди</a>
                         <a href="">Ещё</a>
@@ -52,102 +57,175 @@
                         <h1>Oscars</h1>
                         <button class="win-btn">wiew the winners →</button>
                     </div>
-
+                    a
                 </div>
             </div>
             <div class="trending">
-                <div class="togle">
-                    <h1>Trending</h1>
-                    <input type="checkbox" id="check" class="check">
-                    <label for="check" class="togle-tap">
-                        <p>today</p>
-                        <p>this week</p>
-                    </label>
+                <div class="togle-content">
+                    <h1>trending</h1>
+                    <div class="togle">
+                        <span id="today">today</span>
+                        <span id="week">this week</span>
+                    </div>
                 </div>
-                <div class="card">
+
+                <div style="display: none;" class="card ">
                     <div class="card-border">
                         <img src="/assets/img/images.jpg" alt="">
                     </div>
+                    <div class="card-border">
+                        <img src="/assets/img/images.jpg" alt="">
+                    </div>
+                    <div class="card-border">
+                        <img src="/assets/img/images.jpg" alt="">
+                    </div>
+                    <div class="card-border">
+                        <img src="/assets/img/images.jpg" alt="">
+                    </div>
+                    <div class="card-border">
+                        <img src="/assets/img/images.jpg" alt="">
+                    </div>
+                    <div class="card-border">
+                        <img src="/assets/img/images.jpg" alt="">
+                    </div>
+                    <div class="card-border">
+                        <img src="/assets/img/images.jpg" alt="">
+                    </div>
+                    <div class="card-border">
+                        <img src="/assets/img/images.jpg" alt="">
+                    </div>
+
+                </div>
+                <div style="display: none;" class="card-week">
+                    jershfjdhgjrh
                 </div>
             </div>
             <div class="lastest-trailers">
-                <div class="togle">
+                <div class="togle-content">
                     <h1>lastest trailers</h1>
-                    <input type="checkbox" id="checkk" class="check">
-                    <label for="checkk" class="togle-tap">
-                        <p>today</p>
-                        <p>this week</p>
-                    </label>
+                    <div class="togle">
+                        <span id="popular">popular</span>
+                        <span id="stream">streaming</span>
+                        <span id="tw">on tw </span>
+                        <span id="rent">for Rent</span>
+                        <span id="theat">in theaters</span>
+                    </div>
+                </div>
+                <div style="display: none;" class="popular">
+                    <h1>popular</h1>
+                </div>
+                <div style="display: none;" class="stream">
+                    <h1>stream</h1>
+                </div>
+                <div style="display: none;" class="tw">
+                    <h1>tw</h1>
+                </div>
+                <div style="display: none;" class="rent">
+                    <h1>rent</h1>
+                </div>
+                <div style="display: none;" class="theat">
+                    <h1>theat</h1>
                 </div>
             </div>
-            <div class="jointoday">
-                <div class="text">
-                    <h1>Join Today</h1>
-                    <p>
-                        Get access to maintain your own custom personal lists, track what you've seen and search and
-                        <br>
-                        filter
-                        for what to watch next—regardless if it's in theatres, on TV or available <br> on popular
-                        streaming
-                        services like Netflix, Amazon Prime Video, Disney Plus, Apple TV <br> Plus, and Hulu.
-                    </p>
-                    <button>sign-up</button>
+            <div class="what-popular">
+                <div class="btn">
+                    <h1>What's popular</h1>
+                    <div class="togle">
+                        <span id="stream2">streaming</span>
+                        <span id="tw2">On tw</span>
+                        <span id="for2">For ent</span>
+                        <span id="theat2">In theaters</span>
+                    </div>
                 </div>
-                <div class="list">
-                    <ul>
-                        <li>Enjoy TMDB ad free</li>
-                        <li>Maintain a personal watchlist</li>
-                        <li>Filter by your subscribed streaming services and find something to watch</li>
-                        <li>Log the movies and TV shows you've seen</li>
-                        <li>Build custom lists</li>
-                        <li>Contribute to and improve our database</li>
-                    </ul>
+                <div style="display: none;" class="for">
+                    <h1>popular</h1>
+                </div>
+                <div style="display: none;" class="stream2">
+                    <h1>stream</h1>
+                </div>
+                <div style="display: none;" class="tw2">
+                    <h1>tw</h1>
+                </div>
+                <div style="display: none;" class="theat2">
+                    <h1>rent</h1>
                 </div>
             </div>
+            <div class="free-watch">
+                <div class="btn">
+                    <h1>free to watch</h1>
+                    <div class="togle">
+                        <span id="today2">Movie</span>
+                        <span id="week3">tw</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="center">
+                <div class="jointoday">
+                    <div class="text">
+                        <h1>Join Today</h1>
+                        <p>
+                            Get access to maintain your own custom personal lists, track what you've seen and search and
+                            <br>
+                            filter
+                            for what to watch next—regardless if it's in theatres, on TV or available <br> on popular
+                            streaming
+                            services like Netflix, Amazon Prime Video, Disney Plus, Apple TV <br> Plus, and Hulu.
+                        </p>
+                        <button>sign-up</button>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li>Enjoy TMDB ad free</li>
+                            <li>Maintain a personal watchlist</li>
+                            <li>Filter by your subscribed streaming services and find something to watch</li>
+                            <li>Log the movies and TV shows you've seen</li>
+                            <li>Build custom lists</li>
+                            <li>Contribute to and improve our database</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
 
 
             <div class="footer">
-                <div class="img">
-                    <img src="/assets/img/2560px-Tmdb.new.logo.svg.png" alt="">
-                    <button>join the comunity</button>
-                </div>
-                <div class="text-1">
-                    <h2>THE BASICS</h2>
-                    <p>About TMDB</p>
-                    <p>contact us</p>
-                    <p>support forums</p>
-                    <p>api</p>
-                    <p>system status</p>
-                </div>
-                <div class="text-2">
-                    <h2>GET INVOLVED</h2>
-                    <p>Contribution Bible</p>
-                    <p>Add New Movie</p>
-                    <p>Add New TV Show</p>
-                </div>
-                <div class="text-3">
-                    <h2>COMMUNITY</h2>
-                    <p>Guidelines</p>
-                    <p>Discussions</p>
-                    <p>Leaderboard</p>
-                </div>
-                <div class="text-4">
-                    <h2>LEGAL</h2>
-                    <p>Terms of Use</p>
-                    <p>API Terms of Use</p>
-                    <p>Privacy Policy</p>
-                    <p>DMCA Policy</p>
+                <div class="footer-wit">
+                    <div class="img">
+                        <img src="/assets/img/2560px-Tmdb.new.logo.svg.png" alt="">
+                        <button>join the comunity</button>
+                    </div>
+                    <div class="text">
+                        <h2>THE BASICS</h2>
+                        <p>About TMDB</p>
+                        <p>contact us</p>
+                        <p>support forums</p>
+                        <p>api</p>
+                        <p>system status</p>
+                    </div>
+                    <div class="text">
+                        <h2>GET INVOLVED</h2>
+                        <p>Contribution Bible</p>
+                        <p>Add New Movie</p>
+                        <p>Add New TV Show</p>
+                    </div>
+                    <div class="text">
+                        <h2>COMMUNITY</h2>
+                        <p>Guidelines</p>
+                        <p>Discussions</p>
+                        <p>Leaderboard</p>
+                    </div>
+                    <div class="text">
+                        <h2>LEGAL</h2>
+                        <p>Terms of Use</p>
+                        <p>API Terms of Use</p>
+                        <p>Privacy Policy</p>
+                        <p>DMCA Policy</p>
+                    </div>
                 </div>
             </div>
-        </nav>
+        </section>
         </conteiner>
-
-        <div class="tugma-test">
-            <p>salom</>
-            <p>alik</p>
-            <p>hayr</p>
-        </div>
-
         <script src="../js/main.js"></script>
 
 </body>

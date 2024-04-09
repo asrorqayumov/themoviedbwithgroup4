@@ -1631,18 +1631,20 @@
   box-sizing: border-box;
 }
 
-.conteiner nav .topnav {
+.conteiner .global-content .topnav {
   background-color: rgb(9, 9, 110);
-  overflow: hidden;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
   /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 }
-.conteiner nav .topnav .search {
+.conteiner .global-content .topnav .search {
   display: flex;
   justify-content: space-around;
 }
-.conteiner nav .topnav a {
+.conteiner .global-content .topnav a {
   float: left;
   display: block;
   color: #f2f2f2;
@@ -1651,47 +1653,60 @@
   text-decoration: none;
   font-size: 17px;
 }
-.conteiner nav .topnav .link-side {
+.conteiner .global-content .topnav .link-side {
   margin-left: 30px;
 }
-.conteiner nav .topnav .topnav a.active {
+.conteiner .global-content .topnav .link-side .click {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  color: black;
+  position: relative;
+  width: 120px;
+  right: 100px;
+  top: 35px;
+}
+.conteiner .global-content .topnav .link-side .click a {
+  color: black;
+}
+.conteiner .global-content .topnav .topnav a.active {
   background-color: #04AA6D;
   color: white;
 }
-.conteiner nav .topnav .icon {
+.conteiner .global-content .topnav .icon {
   display: none;
 }
 @media screen and (max-width: 600px) {
-  .conteiner nav .topnav a:not(:first-child) {
+  .conteiner .global-content .topnav a:not(:first-child) {
     display: none;
   }
-  .conteiner nav .topnav a.icon {
+  .conteiner .global-content .topnav a.icon {
     float: right;
     display: block;
   }
 }
 @media screen and (max-width: 600px) {
-  .conteiner nav .topnav .responsive {
+  .conteiner .global-content .topnav .responsive {
     position: relative;
   }
-  .conteiner nav .topnav .responsive a.icon {
+  .conteiner .global-content .topnav .responsive a.icon {
     position: absolute;
     right: 0;
     top: 0;
   }
-  .conteiner nav .topnav .responsive a {
+  .conteiner .global-content .topnav .responsive a {
     float: none;
     display: block;
     text-align: left;
   }
 }
-.conteiner nav .topnav .search-side .fa-magnifying-glass {
+.conteiner .global-content .topnav .search-side .fa-magnifying-glass {
   color: white;
   width: 45px;
   height: 35px;
   padding: 15px 18px;
 }
-.conteiner nav .search-movie {
+.conteiner .global-content .search-movie {
   background-image: url(/assets/img/i\ \(3\).webp);
   background-size: cover;
   background-repeat: no-repeat;
@@ -1702,28 +1717,28 @@
   flex-direction: column;
   justify-content: center;
 }
-.conteiner nav .search-movie .title {
+.conteiner .global-content .search-movie .title {
   margin-bottom: 30px;
   margin-left: 40px;
 }
-.conteiner nav .search-movie .title h1 {
+.conteiner .global-content .search-movie .title h1 {
   font-size: 3em;
   font-weight: 700;
   line-height: 1;
   margin-bottom: 30px;
 }
-.conteiner nav .search-movie .title h2 {
+.conteiner .global-content .search-movie .title h2 {
   font-size: 2em;
   font-weight: 600;
   line-height: 0;
   margin-bottom: 30px;
 }
-.conteiner nav .search-movie .search-content {
+.conteiner .global-content .search-movie .search-content {
   display: flex;
   justify-content: center;
   margin-top: 30px;
 }
-.conteiner nav .search-movie .search-content .inp-search {
+.conteiner .global-content .search-movie .search-content .inp-search {
   width: 88%;
   height: 45px;
   border-radius: 12px;
@@ -1731,7 +1746,7 @@
   border-right: none;
   border: none;
 }
-.conteiner nav .search-movie .search-content .search-btn {
+.conteiner .global-content .search-movie .search-content .search-btn {
   background-color: rgba(36, 189, 36, 0.836);
   border-radius: 12px;
   padding: 0px 10px;
@@ -1741,10 +1756,10 @@
   font-size: 1em;
   font-weight: 600;
 }
-.conteiner nav .search-movie .search-content .search-btn:hover {
+.conteiner .global-content .search-movie .search-content .search-btn:hover {
   color: blue;
 }
-.conteiner nav .oscars {
+.conteiner .global-content .oscars {
   height: 25vh;
   background-image: url(/assets/img/i\ \(2\).webp);
   background-size: cover;
@@ -1752,60 +1767,67 @@
   background-position: center;
   color: white;
 }
-.conteiner nav .oscars .oscars-text {
+.conteiner .global-content .oscars .oscars-text {
   margin-left: 30px;
   font-size: 3em;
 }
-.conteiner nav .oscars .oscars-text .win-btn {
+.conteiner .global-content .oscars .oscars-text .win-btn {
   border: none;
   border-radius: 12px;
   padding: 12px 15px;
   background-image: url(/assets/img/i\ \(2\).webp);
   border: 2px white solid;
 }
-.conteiner nav .trending .togle {
+.conteiner .global-content .trending {
   margin-left: 30px;
-  display: flex;
-  padding-top: 30px;
 }
-.conteiner nav .trending .togle .togle-tap {
-  border-radius: 12px;
-  border: 2px solid black;
-  width: 150px;
-  height: 33px;
-  font-size: 1em;
+.conteiner .global-content .trending .togle-content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  position: relative;
-  margin-left: 15px;
 }
-.conteiner nav .trending .togle .togle-tap p {
-  margin-left: 10px;
-  margin-right: 10px;
+.conteiner .global-content .trending .togle-content h1 {
+  padding-top: 15px;
 }
-.conteiner nav .trending .togle .togle-tap::before {
-  position: absolute;
-  content: "";
+.conteiner .global-content .trending .togle-clas {
+  width: 90px;
+  height: 30px;
+  display: flex;
   background-color: blue;
   opacity: 0.5;
-  width: 75px;
-  height: 29px;
   border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+  transition: all 2s;
 }
-.conteiner nav .trending .togle .check:checked + .togle-tap::before {
-  transform: translate(75px);
+.conteiner .global-content .trending .togle {
+  display: flex;
+  border-radius: 12px;
+  border: 2px solid black;
+  width: 200px;
+  height: 30px;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15px;
+  margin-left: 20px;
 }
-.conteiner nav .trending .togle .check {
+.conteiner .global-content .trending .togle span {
+  font-size: 1em;
+  color: black;
+  opacity: 1;
+}
+.conteiner .global-content .trending .hidden {
   display: none;
 }
-.conteiner nav .trending .card {
-  height: 40vh;
+.conteiner .global-content .trending .card {
+  height: 45vh;
+  display: flex;
+  overflow-x: scroll;
 }
-.conteiner nav .trending .card .card-border {
-  display: inline;
+.conteiner .global-content .trending .card .card-border {
+  margin-top: 15px;
+  padding-left: 10px;
 }
-.conteiner nav .jointoday {
+.conteiner .global-content .center .jointoday {
   display: flex;
   justify-content: space-between;
   padding-left: 30px;
@@ -1814,61 +1836,62 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
-.conteiner nav .jointoday .text h1 {
+.conteiner .global-content .center .jointoday .text h1 {
   font-size: 2em;
 }
-.conteiner nav .jointoday .text p {
+.conteiner .global-content .center .jointoday .text p {
   padding-top: 15px;
   padding-bottom: 15px;
   font-size: 1em;
   font-weight: 500;
 }
-.conteiner nav .jointoday .text button {
+.conteiner .global-content .center .jointoday .text button {
   padding: 8px 12px;
   border-radius: 8px;
   border: none;
   background-color: slateblue;
 }
-.conteiner nav .jointoday .list ul li {
+.conteiner .global-content .center .jointoday .list {
+  margin-right: 30px;
+}
+.conteiner .global-content .center .jointoday .list ul li {
   margin-top: 5px;
 }
-.conteiner nav .lastest-trailers .togle {
+.conteiner .global-content .lastest-trailers {
   margin-left: 30px;
-  display: flex;
-  padding-top: 30px;
 }
-.conteiner nav .lastest-trailers .togle .togle-tap {
-  border-radius: 12px;
-  border: 2px solid black;
-  width: 150px;
-  height: 33px;
-  font-size: 1em;
+.conteiner .global-content .lastest-trailers .togle-content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  position: relative;
-  margin-left: 15px;
 }
-.conteiner nav .lastest-trailers .togle .togle-tap p {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-.conteiner nav .lastest-trailers .togle .togle-tap::before {
-  position: absolute;
-  content: "";
+.conteiner .global-content .lastest-trailers .togle-clas {
+  width: 90px;
+  height: 30px;
+  display: flex;
   background-color: blue;
   opacity: 0.5;
-  width: 75px;
-  height: 29px;
   border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+  transition: all 2s;
 }
-.conteiner nav .lastest-trailers .togle .check:checked + .togle-tap::before {
-  transform: translate(75px);
+.conteiner .global-content .lastest-trailers .togle {
+  display: flex;
+  border-radius: 12px;
+  border: 2px solid black;
+  width: 500px;
+  height: 30px;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15px;
+  margin-left: 20px;
 }
-.conteiner nav .lastest-trailers .togle .check {
-  display: none;
+.conteiner .global-content .lastest-trailers .togle span {
+  font-size: 1em;
+  color: black;
+  opacity: 1;
 }
-.conteiner nav .footer {
+.conteiner .global-content .footer {
   display: flex;
   background-color: #031d33;
   justify-content: space-around;
@@ -1876,14 +1899,88 @@
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.conteiner nav .footer .img img {
+.conteiner .global-content .footer .footer-wit {
+  display: flex;
+}
+.conteiner .global-content .footer .text {
+  font-size: 1em;
+}
+.conteiner .global-content .footer .img img {
   display: flex;
   flex-direction: column;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
 }
-.conteiner nav .footer .img button {
+.conteiner .global-content .footer .img button {
   margin-top: 20px;
-  padding: 10px 12px;
+  padding: 10px 20px;
   font-size: 1em;
+}
+.conteiner .global-content .footer .text {
+  margin-left: 20px;
+}
+.conteiner .global-content .what-popular {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 30px;
+}
+.conteiner .global-content .what-popular .btn {
+  display: flex;
+}
+.conteiner .global-content .what-popular .btn .togle-clas {
+  background-color: blue;
+  width: 90px;
+  height: 30px;
+  display: flex;
+  opacity: 0.5;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+  transition: all 2s;
+}
+.conteiner .global-content .what-popular .btn .togle {
+  display: flex;
+  border: 2px black solid;
+  border-radius: 12px;
+  width: 400px;
+  height: 30px;
+  margin-left: 20px;
+  justify-content: space-around;
+  align-items: center;
+}
+.conteiner .global-content .what-popular .btn .togle span {
+  opacity: 1;
+}
+.conteiner .global-content .free-watch {
+  margin-left: 30px;
+}
+.conteiner .global-content .free-watch .btn {
+  display: flex;
+}
+.conteiner .global-content .free-watch .btn .togle-clas {
+  width: 90px;
+  height: 30px;
+  display: flex;
+  background-color: blue;
+  opacity: 0.5;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+  transition: all 2s;
+}
+.conteiner .global-content .free-watch .btn .togle {
+  display: flex;
+  border-radius: 12px;
+  border: 2px solid black;
+  width: 200px;
+  height: 30px;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+.conteiner .global-content .free-watch .btn .togle span {
+  font-size: 1em;
+  color: black;
+  opacity: 1;
 }/*# sourceMappingURL=main.css.map */

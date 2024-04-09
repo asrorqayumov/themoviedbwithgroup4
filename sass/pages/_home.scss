@@ -5,13 +5,15 @@
 }
 
 .conteiner {
-  nav {
+  .global-content {
     .topnav {
       background-color: rgb(9, 9, 110);
-      overflow: hidden;
       display: flex;
       justify-content: space-between;
-
+      position: fixed;
+      top: 0;
+      width: 100%;
+      
       .search {
         display: flex;
         justify-content: space-around;
@@ -29,6 +31,19 @@
 
       .link-side {
         margin-left: 30px;
+        .click{
+          display: 
+          flex;flex-direction: column;
+          background-color: white;
+          color: black;
+          position: relative;
+          width: 120px;
+          right: 100px;
+          top: 35px;
+          a{
+            color: black;
+          }
+        }
       }
 
       .topnav a.active {
@@ -169,141 +184,148 @@
     }
 
     .trending {
-      .togle {
-        margin-left: 30px;
+      margin-left: 30px;
+
+      .togle-content {
         display: flex;
-        padding-top: 30px;
+        align-items: center;
 
-        .togle-tap {
-          border-radius: 12px;
-          border: 2px solid black;
-          width: 150px;
-          height: 33px;
+        h1 {
+          padding-top: 15px;
+        }
+
+      }
+
+      .togle-clas {
+        width: 90px;
+        height: 30px;
+        display: flex;
+        background-color: blue;
+        opacity: 0.5;
+        border-radius: 12px;
+        align-items: center;
+        justify-content: center;
+        transition: all 2s;
+      }
+
+      .togle {
+        display: flex;
+        border-radius: 12px;
+        border: 2px solid black;
+        width: 200px;
+        height: 30px;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 15px;
+       margin-left: 20px;
+        span {
           font-size: 1em;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          position: relative;
-          margin-left: 15px;
-
-          p {
-            margin-left: 10px;
-            margin-right: 10px;
-          }
+          color: black;
+          opacity: 1;
         }
 
-        .togle-tap::before {
-          position: absolute;
-          content: '';
-          background-color: blue;
-          opacity: 0.5;
-          width: 75px;
-          height: 29px;
-          border-radius: 12px;
-        }
 
-        .check:checked+.togle-tap::before {
-          transform: translate(75px);
-        }
+      }
 
-        .check {
-          display: none;
-        }
+      .hidden {
+        display: none;
       }
 
       .card {
-        height: 40vh;
-        .card-border{
-          // background-image: url(/assets/img/images.jpg);
-          // background-position: center;
-          // background-repeat: no-repeat;
-          display: inline;
-        
-        }
-      }
-    }
-
-    .jointoday {
-      display: flex;
-      justify-content: space-between;
-      padding-left: 30px;
-      color: white;
-      background-color: rgb(39, 36, 36);
-      padding-top: 30px;
-      padding-bottom: 30px;
-
-      .text {
-        h1 {
-          font-size: 2em;
-        }
-
-        p {
-          padding-top: 15px;
-          padding-bottom: 15px;
-          font-size: 1em;
-          font-weight: 500;
-        }
-
-        button {
-          padding: 8px 12px;
-          border-radius: 8px;
-          border: none;
-          background-color: slateblue;
-        }
-      }
-
-      .list {
-        ul {
-          li {
-            margin-top: 5px;
-          }
-        }
-      }
-    }
-
-    .lastest-trailers {
-      .togle {
-        margin-left: 30px;
+        height: 45vh;
         display: flex;
-        padding-top: 30px;
+        overflow-x: scroll;
 
-        .togle-tap {
-          border-radius: 12px;
-          border: 2px solid black;
-          width: 150px;
-          height: 33px;
-          font-size: 1em;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          position: relative;
-          margin-left: 15px;
+        .card-border {
+          margin-top: 15px;
+          padding-left: 10px;
+        }
+      }
+    }
+
+    .center {
+
+      .jointoday {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 30px;
+        color: white;
+        background-color: rgb(39, 36, 36);
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+        .text {
+          h1 {
+            font-size: 2em;
+          }
 
           p {
-            margin-left: 10px;
-            margin-right: 10px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-size: 1em;
+            font-weight: 500;
+          }
+
+          button {
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: none;
+            background-color: slateblue;
           }
         }
 
-        .togle-tap::before {
-          position: absolute;
-          content: '';
-          background-color: blue;
-          opacity: 0.5;
-          width: 75px;
-          height: 29px;
-          border-radius: 12px;
-        }
+        .list {
+          margin-right: 30px;
 
-        .check:checked+.togle-tap::before {
-          transform: translate(75px);
-        }
-
-        .check {
-          display: none;
+          ul {
+            li {
+              margin-top: 5px;
+            }
+          }
         }
       }
     }
+
+
+    .lastest-trailers {
+      margin-left: 30px;
+
+      .togle-content {
+        display: flex;
+        align-items: center;
+      }
+
+      .togle-clas {
+        width: 90px;
+        height: 30px;
+        display: flex;
+        background-color: blue;
+        opacity: 0.5;
+        border-radius: 12px;
+        align-items: center;
+        justify-content: center;
+        transition: all 2s;
+      }
+
+      .togle {
+        display: flex;
+        border-radius: 12px;
+        border: 2px solid black;
+        width: 500px;
+        height: 30px;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 15px;
+        margin-left: 20px;
+
+        span {
+          font-size: 1em;
+          color: black;
+          opacity: 1;
+        }
+      }
+    }
+
 
     .footer {
       display: flex;
@@ -312,23 +334,116 @@
       color: white;
       padding-top: 20px;
       padding-bottom: 20px;
-     
+
+      .footer-wit {
+        display: flex;
+
+      }
+
+      .text {
+        font-size: 1em;
+      }
+
       .img {
         img {
           display: flex;
           flex-direction: column;
-          width: 150px;
-          height: 150px;
+          width: 100px;
+          height: 100px;
 
         }
 
         button {
+
           margin-top: 20px;
-          padding: 10px 12px;
+          padding: 10px 20px;
           font-size: 1em;
         }
       }
+
+      .text {
+        margin-left: 20px;
+      }
     }
 
+    .what-popular {
+      margin-top: 40px;
+      margin-bottom: 40px;
+      margin-left: 30px;
+
+      .btn {
+        display: flex;
+
+        .togle-clas {
+          background-color: blue;
+          width: 90px;
+          height: 30px;
+          display: flex;
+          opacity: 0.5;
+          border-radius: 12px;
+          align-items: center;
+          justify-content: center;
+          transition: all 2s;
+        }
+
+        .togle {
+          display: flex;
+          border: 2px black solid;
+          border-radius: 12px;
+          width: 400px;
+          height: 30px;
+          margin-left: 20px;
+          justify-content: space-around;
+          align-items: center;
+
+          span {
+            opacity: 1;
+          }
+        }
+
+      }
+    }
+
+    .free-watch {
+      margin-left: 30px;
+
+      .btn {
+        display: flex;
+
+        .togle-clas {
+          width: 90px;
+          height: 30px;
+          display: flex;
+          background-color: blue;
+          opacity: 0.5;
+          border-radius: 12px;
+          align-items: center;
+          justify-content: center;
+          transition: all 2s;
+        }
+
+        .togle {
+          display: flex;
+          border-radius: 12px;
+          border: 2px solid black;
+          width: 200px;
+          height: 30px;
+          justify-content: space-around;
+          align-items: center;
+          margin-top: 15px;
+          margin-left: 20px;
+
+          span {
+            font-size: 1em;
+            color: black;
+            opacity: 1;
+          }
+
+
+        }
+      }
+
+    }
   }
+
 }
