@@ -7,6 +7,8 @@
     <title>Home page</title>
     <!-- css file  -->
     <link rel="stylesheet" href="/sass/main.css">
+    <!-- bootstrap -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
 </head>
 
 <body>
@@ -18,15 +20,39 @@
                 <div class="topnav" id="myTopnav">
                     <div class="link-side">
                         <a href="" class="TMDB">TMDB</a>
-                        <a href="">Фильмы <div style="display: none;" class="click">
-                                <a href="">popular</a>
-                                <a href="">popular movies</a>
-                                <a href="">About</a>
-                            </div></a>
-
-                        <a href="">Сериалы</a>
-                        <a href="">Люди</a>
-                        <a href="">Ещё</a>
+                        <a href="" class="film">Movies</a>
+                        <div style="display: none;" class="click">
+                            <ul>
+                                <li><a href="">popular</a></li>
+                                <li><a href="">Now playin</a></li>
+                                <li><a href="">upcoming</a></li>
+                                <li><a href="">top reated</a></li>
+                            </ul>
+                        </div>
+                        <a href="" class="twShows">Tw shows</a>
+                        <div style="display: none;" class="click tw-shows">
+                            <ul>
+                                <li><a href="">popular</a></li>
+                                <li><a href="">airing today</a></li>
+                                <li><a href="">On tw </a></li>
+                                <li><a href="">top Rated</a></li>
+                            </ul>
+                        </div>
+                        <a href="" class="people-a">people</a>
+                        <div style="display: none;" class="click people">
+                            <ul>
+                                <li><a href="">popular people</a></li>
+                            </ul>
+                        </div>
+                        <a href="" class="moreA">more</a>
+                        <div style="display: none;" class="click more">
+                            <ul>
+                                <li><a href="">Discussions</a></li>
+                                <li><a href="">Leaderboard</a></li>
+                                <li><a href="">Support</a></li>
+                                <li><a href="">Api</a></li>
+                            </ul>
+                        </div>
 
                     </div>
                     <div class="search-side">
@@ -40,24 +66,25 @@
                 </div>
                 <div class="search-movie">
                     <div class="title">
-                        <h1>Добро пожаловать.</h1>
-                        <h2>Миллионы фильмов, сериалов и людей. Исследуйте сейчас.</h2>
+                        <h1>Welcome.</h1>
+                        <h2>Milions of vovies, Tw show and people to discovcer. Explore now</h2>
                     </div>
-                    <div class="search-content">
-                        <input type="text" class="inp-search" placeholder="Найти фильм, сериал, персону......"
-                            autofill="off">
+                    <div class="search">
+                        <div class="search-content">
+                            <input type="text" class="inp-search" placeholder="Найти фильм, сериал, персону......"
+                                autofill="off">
+                        </div>
                         <button class="search-btn">search</button>
-
                     </div>
+
                 </div>
 
 
                 <div class="oscars">
                     <div class="oscars-text">
                         <h1>Oscars</h1>
-                        <button class="win-btn">wiew the winners →</button>
+                        <button class="winn-btn">wiew the winners →</button>
                     </div>
-                    a
                 </div>
             </div>
             <div class="trending">
@@ -69,35 +96,11 @@
                     </div>
                 </div>
 
-                <div style="display: none;" class="card ">
-                    <div class="card-border">
-                        <img src="/assets/img/images.jpg" alt="">
-                    </div>
-                    <div class="card-border">
-                        <img src="/assets/img/images.jpg" alt="">
-                    </div>
-                    <div class="card-border">
-                        <img src="/assets/img/images.jpg" alt="">
-                    </div>
-                    <div class="card-border">
-                        <img src="/assets/img/images.jpg" alt="">
-                    </div>
-                    <div class="card-border">
-                        <img src="/assets/img/images.jpg" alt="">
-                    </div>
-                    <div class="card-border">
-                        <img src="/assets/img/images.jpg" alt="">
-                    </div>
-                    <div class="card-border">
-                        <img src="/assets/img/images.jpg" alt="">
-                    </div>
-                    <div class="card-border">
-                        <img src="/assets/img/images.jpg" alt="">
-                    </div>
+                <div class="card" style="display: none;">
 
                 </div>
-                <div style="display: none;" class="card-week">
-                    jershfjdhgjrh
+                <div class="card-week" style="display: none;">
+
                 </div>
             </div>
             <div class="lastest-trailers">
@@ -105,60 +108,15 @@
                     <h1>lastest trailers</h1>
                     <div class="togle">
                         <span id="popular">popular</span>
-                        <span id="stream">streaming</span>
-                        <span id="tw">on tw </span>
-                        <span id="rent">for Rent</span>
-                        <span id="theat">in theaters</span>
+                        <span id="stream">in theaters</span>
                     </div>
                 </div>
                 <div style="display: none;" class="popular">
                     <h1>popular</h1>
                 </div>
                 <div style="display: none;" class="stream">
-                    <h1>stream</h1>
+                    <h1>in theaters</h1>
                 </div>
-                <div style="display: none;" class="tw">
-                    <h1>tw</h1>
-                </div>
-                <div style="display: none;" class="rent">
-                    <h1>rent</h1>
-                </div>
-                <div style="display: none;" class="theat">
-                    <h1>theat</h1>
-                </div>
-            </div>
-            <div class="what-popular">
-                <div class="btn">
-                    <h1>What's popular</h1>
-                    <div class="togle">
-                        <span id="stream2">streaming</span>
-                        <span id="tw2">On tw</span>
-                        <span id="for2">For ent</span>
-                        <span id="theat2">In theaters</span>
-                    </div>
-                </div>
-                <div style="display: none;" class="for">
-                    <h1>popular</h1>
-                </div>
-                <div style="display: none;" class="stream2">
-                    <h1>stream</h1>
-                </div>
-                <div style="display: none;" class="tw2">
-                    <h1>tw</h1>
-                </div>
-                <div style="display: none;" class="theat2">
-                    <h1>rent</h1>
-                </div>
-            </div>
-            <div class="free-watch">
-                <div class="btn">
-                    <h1>free to watch</h1>
-                    <div class="togle">
-                        <span id="today2">Movie</span>
-                        <span id="week3">tw</span>
-                    </div>
-                </div>
-
             </div>
             <div class="center">
                 <div class="jointoday">
@@ -226,8 +184,13 @@
             </div>
         </section>
         </conteiner>
+        <div id="overlay" class="overlay d-flex d-none  ">
+            <div class="spinner-border text-light" role="status">
+              <span class="sr-only"></span>
+            </div>
+          </div>
         <script src="../js/main.js"></script>
-
+        <script src="../js/card.js"></script>
 </body>
 
 </html>

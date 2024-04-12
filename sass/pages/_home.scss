@@ -13,7 +13,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      
+
       .search {
         display: flex;
         justify-content: space-around;
@@ -31,18 +31,45 @@
 
       .link-side {
         margin-left: 30px;
-        .click{
-          display: 
-          flex;flex-direction: column;
+
+        .click {
+          display: flex;
+          flex-direction: column;
           background-color: white;
-          color: black;
-          position: relative;
-          width: 120px;
-          right: 100px;
-          top: 35px;
-          a{
-            color: black;
+          border-radius: 7px;
+          height: max-content;
+          justify-content: center;
+          width: 150px;
+          position: absolute;
+          top: 40px;
+          left: 120px ;
+          ul{
+            li{
+              list-style: none;
+              position: relative;
+              left: 20px;
+            }
           }
+          a {
+            position: relative;
+            color: black;
+            margin-bottom: -10px;
+            padding-top: 10px;
+            left: -30px;
+          }
+        }
+        .tw-shows{
+          position: absolute;
+          top: 40px;
+          left: 210px ;
+        }
+        .people{
+          position: absolute;
+          left: 300px;
+        }
+        .more{
+          position: absolute;
+          left: 380px;
         }
       }
 
@@ -109,7 +136,7 @@
       justify-content: center;
 
       .title {
-        margin-bottom: 30px;
+        margin-top: 30px;
         margin-left: 40px;
       }
 
@@ -129,33 +156,45 @@
 
       .search-content {
         display: flex;
-        justify-content: center;
         margin-top: 30px;
-
+        width: 90%;
         .inp-search {
-          width: 88%;
+          width: 100%;
           height: 45px;
-          border-radius: 12px;
+          border-radius: 22px;
           padding: 8px 10px;
           border-right: none;
           border: none;
         }
 
-        .search-btn {
-          background-color: rgba(36, 189, 36, 0.836);
-          border-radius: 12px;
-          padding: 0px 10px;
-          height: 45px;
-          padding-right: 10px;
-          border: none;
-          font-size: 1em;
-          font-weight: 600;
-        }
+
 
         .search-btn:hover {
           color: blue;
         }
 
+      }
+
+      .search {
+        display: flex;
+        justify-content: center;
+        .search-btn {
+          position: relative;
+          left: -30px;
+          background: green;
+          opacity: 1;
+          border-radius: 22px;
+          padding: 0px 10px;
+          height: 52px;
+          padding-right: 10px;
+          border: none;
+          font-size: 1em;
+          font-weight: 600;
+          margin-top: 27px;
+       
+        }
+
+  
       }
     }
 
@@ -173,12 +212,13 @@
         margin-left: 30px;
         font-size: 3em;
 
-        .win-btn {
+        .winn-btn {
           border: none;
           border-radius: 12px;
           padding: 12px 15px;
           background-image: url(/assets/img/i\ \(2\).webp);
           border: 2px white solid;
+          font-size: large;
         }
       }
     }
@@ -217,7 +257,8 @@
         justify-content: space-around;
         align-items: center;
         margin-top: 15px;
-       margin-left: 20px;
+        margin-left: 20px;
+
         span {
           font-size: 1em;
           color: black;
@@ -226,19 +267,24 @@
 
 
       }
-
-      .hidden {
-        display: none;
-      }
-
-      .card {
-        height: 45vh;
+      .card-week {
         display: flex;
+        padding-top: 25px;
         overflow-x: scroll;
-
-        .card-border {
-          margin-top: 15px;
-          padding-left: 10px;
+        overflow-y: hidden;
+        card{
+          flex-wrap: wrap;
+          padding-left: 25px;
+        }
+      }
+      .card{
+        display: flex;
+        padding-top: 25px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        card{
+          flex-wrap: wrap;
+          padding-left: 25px;
         }
       }
     }
@@ -289,12 +335,11 @@
 
     .lastest-trailers {
       margin-left: 30px;
-
+      display: flex;
       .togle-content {
         display: flex;
         align-items: center;
       }
-
       .togle-clas {
         width: 90px;
         height: 30px;
@@ -311,18 +356,21 @@
         display: flex;
         border-radius: 12px;
         border: 2px solid black;
-        width: 500px;
-        height: 30px;
+        width: 200px;
+        height: 33px;
         justify-content: space-around;
         align-items: center;
         margin-top: 15px;
         margin-left: 20px;
+        margin-bottom: 10px;
 
         span {
           font-size: 1em;
           color: black;
           opacity: 1;
         }
+
+
       }
     }
 
