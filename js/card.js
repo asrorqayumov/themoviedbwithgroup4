@@ -1,4 +1,11 @@
-async function getPopularMovies() {
+import moment from "../node_modules/moment/dist/moment.js";
+
+export function calcVoteAverage(vote) {
+  return  Math.round(vote * 10) 
+ }
+
+
+ async  function getPopularMovies() {
   try {
     let request = await fetch(
       "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
@@ -24,6 +31,8 @@ function displayMovies(movieList) {
   let cardList = document.querySelector(".card-week");
   let html = "";
   movieList.forEach((movie) => {
+
+    console.log(movie);
     html += ` <card  data-id='' class="movieCard">
       <a href="movie.html" data-click="true" class="card-img-btn">
         <img
@@ -76,14 +85,14 @@ function displayMovies(movieList) {
         <div class="circle-progressbar">
           <div
             role="progressbar"
-            aria-valuenow="88"
+            aria-valuenow="${calcVoteAverage(movie.vote_average)}"
             aria-valuemin="0"
             aria-valuemax="100"
-            style="--value: 88"
+            style="--value: ${calcVoteAverage(movie.vote_average)}"
           ></div>
         </div>
         <a href="movie.html" data-click="true" class="card-title"> ${movie.title} </a>
-        <p class="card-text">Mar 25, 2022</p>
+        <p class="card-text">${moment(movie.release_date).format("ll")}</p>
       </div>
     </card>
     `;
