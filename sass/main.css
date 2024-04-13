@@ -1625,6 +1625,171 @@
     flex-grow: 1;
   }
 }
+.movieCard {
+  border: 0px !important;
+  width: 170px;
+}
+.movieCard .card-img-btn {
+  cursor: pointer !important;
+}
+.movieCard .card-img-btn .card-img {
+  border-radius: 8px;
+  width: 160px;
+}
+.movieCard .card-img-overlay {
+  width: 0px;
+  height: 0px;
+}
+.movieCard .threedot-btn {
+  padding-left: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.movieCard .threedot-btn .fa-ellipsis {
+  font-size: 20px;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 50%;
+  color: rgba(0, 0, 0, 0.5);
+}
+.movieCard .threedot-btn .fa-ellipsis:hover {
+  color: black;
+  background-color: rgb(0, 217, 255);
+}
+.movieCard .card-body {
+  padding: 8px 8px !important;
+}
+.movieCard .card-body .circle-progressbar {
+  position: relative;
+  margin-top: -30px;
+}
+@keyframes growProgressBar {
+  0%, 33% {
+    --pgPercentage: 0;
+  }
+  100% {
+    --pgPercentage: var(--value);
+  }
+}
+@property --pgPercentage {
+  .movieCard .card-body .circle-progressbar {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 0;
+  }
+}
+.movieCard .card-body .circle-progressbar div[role=progressbar] {
+  --size: 2.5rem;
+  --bg: #081c22;
+  --fg: rgba(20, 193, 20, 0.757);
+  --pgPercentage: var(--value);
+  animation: growProgressBar 3s 1 forwards;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(closest-side, #081c22 80%, transparent 0 99.9%, white 0), conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 3.5);
+  color: white;
+}
+.movieCard .card-body .circle-progressbar div[role=progressbar]::before {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) "%";
+}
+.movieCard .card-body .card-title {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  color: black;
+}
+.movieCard .card-body .card-title:hover {
+  color: #01b4e4;
+}
+.movieCard .card-click {
+  border-radius: 10px !important;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  width: 100%;
+  height: 100%;
+  border-radius: var(--imageBorderRadius);
+  z-index: 5;
+  transition: linear 0.1s;
+  opacity: 0;
+  visibility: hidden;
+}
+.movieCard .card-click ul {
+  position: relative;
+  width: 130px;
+  top: 40px;
+  left: 80px;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid rgba(33, 37, 41, 0.15);
+  border-radius: 8px !important;
+  padding: 0px;
+}
+.movieCard .card-click ul li {
+  border-bottom: 1px solid rgba(33, 37, 41, 0.15);
+  padding: 10px;
+  display: flex;
+  cursor: pointer;
+}
+.movieCard .card-click ul li:hover {
+  background-color: #081c22;
+}
+.movieCard .card-click ul li:hover button {
+  color: #fff;
+}
+.movieCard .card-click ul li:last-child {
+  border-bottom: none;
+}
+.movieCard .card-click ul li button {
+  background: transparent;
+  border: none;
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  text-align: center;
+}
+.movieCard .card-click ul li button .fa-solid {
+  padding-right: 10px;
+}
+.movieCard .card-click ul li button[data-addlist=true],
+.movieCard .card-click ul li [data-favlist=true],
+.movieCard .card-click ul li [data-watchlist=true],
+.movieCard .card-click ul li [data-addlist=true] i {
+  color: rgb(190, 7, 7) !important;
+}
+.movieCard .card-click ul li .star-rating-card {
+  margin-left: -88px !important;
+  margin-top: 25px !important;
+}
+.movieCard .on {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: 290px !important;
+  z-index: 10000 !important;
+}
+.movieCard .onOverlay {
+  padding-left: 0px !important;
+  width: 100% !important;
+  z-index: 5000 !important;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -1660,14 +1825,39 @@
   display: flex;
   flex-direction: column;
   background-color: white;
-  color: black;
+  border-radius: 7px;
+  height: -moz-max-content;
+  height: max-content;
+  justify-content: center;
+  width: 150px;
+  position: absolute;
+  top: 40px;
+  left: 120px;
+}
+.conteiner .global-content .topnav .link-side .click ul li {
+  list-style: none;
   position: relative;
-  width: 120px;
-  right: 100px;
-  top: 35px;
+  left: 20px;
 }
 .conteiner .global-content .topnav .link-side .click a {
+  position: relative;
   color: black;
+  margin-bottom: -10px;
+  padding-top: 10px;
+  left: -30px;
+}
+.conteiner .global-content .topnav .link-side .tw-shows {
+  position: absolute;
+  top: 40px;
+  left: 210px;
+}
+.conteiner .global-content .topnav .link-side .people {
+  position: absolute;
+  left: 300px;
+}
+.conteiner .global-content .topnav .link-side .more {
+  position: absolute;
+  left: 380px;
 }
 .conteiner .global-content .topnav .topnav a.active {
   background-color: #04AA6D;
@@ -1718,7 +1908,7 @@
   justify-content: center;
 }
 .conteiner .global-content .search-movie .title {
-  margin-bottom: 30px;
+  margin-top: 30px;
   margin-left: 40px;
 }
 .conteiner .global-content .search-movie .title h1 {
@@ -1735,29 +1925,37 @@
 }
 .conteiner .global-content .search-movie .search-content {
   display: flex;
-  justify-content: center;
   margin-top: 30px;
+  width: 90%;
 }
 .conteiner .global-content .search-movie .search-content .inp-search {
-  width: 88%;
+  width: 100%;
   height: 45px;
-  border-radius: 12px;
+  border-radius: 22px;
   padding: 8px 10px;
   border-right: none;
   border: none;
 }
-.conteiner .global-content .search-movie .search-content .search-btn {
-  background-color: rgba(36, 189, 36, 0.836);
-  border-radius: 12px;
+.conteiner .global-content .search-movie .search-content .search-btn:hover {
+  color: blue;
+}
+.conteiner .global-content .search-movie .search {
+  display: flex;
+  justify-content: center;
+}
+.conteiner .global-content .search-movie .search .search-btn {
+  position: relative;
+  left: -30px;
+  background: green;
+  opacity: 1;
+  border-radius: 22px;
   padding: 0px 10px;
-  height: 45px;
+  height: 52px;
   padding-right: 10px;
   border: none;
   font-size: 1em;
   font-weight: 600;
-}
-.conteiner .global-content .search-movie .search-content .search-btn:hover {
-  color: blue;
+  margin-top: 27px;
 }
 .conteiner .global-content .oscars {
   height: 25vh;
@@ -1771,12 +1969,13 @@
   margin-left: 30px;
   font-size: 3em;
 }
-.conteiner .global-content .oscars .oscars-text .win-btn {
+.conteiner .global-content .oscars .oscars-text .winn-btn {
   border: none;
   border-radius: 12px;
   padding: 12px 15px;
   background-image: url(/assets/img/i\ \(2\).webp);
   border: 2px white solid;
+  font-size: large;
 }
 .conteiner .global-content .trending {
   margin-left: 30px;
@@ -1815,17 +2014,25 @@
   color: black;
   opacity: 1;
 }
-.conteiner .global-content .trending .hidden {
-  display: none;
+.conteiner .global-content .trending .card-week {
+  display: flex;
+  padding-top: 25px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.conteiner .global-content .trending .card-week card {
+  flex-wrap: wrap;
+  padding-left: 25px;
 }
 .conteiner .global-content .trending .card {
-  height: 45vh;
   display: flex;
+  padding-top: 25px;
   overflow-x: scroll;
+  overflow-y: hidden;
 }
-.conteiner .global-content .trending .card .card-border {
-  margin-top: 15px;
-  padding-left: 10px;
+.conteiner .global-content .trending .card card {
+  flex-wrap: wrap;
+  padding-left: 25px;
 }
 .conteiner .global-content .center .jointoday {
   display: flex;
@@ -1859,6 +2066,7 @@
 }
 .conteiner .global-content .lastest-trailers {
   margin-left: 30px;
+  display: flex;
 }
 .conteiner .global-content .lastest-trailers .togle-content {
   display: flex;
@@ -1879,12 +2087,13 @@
   display: flex;
   border-radius: 12px;
   border: 2px solid black;
-  width: 500px;
-  height: 30px;
+  width: 200px;
+  height: 33px;
   justify-content: space-around;
   align-items: center;
   margin-top: 15px;
   margin-left: 20px;
+  margin-bottom: 10px;
 }
 .conteiner .global-content .lastest-trailers .togle span {
   font-size: 1em;
