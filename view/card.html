@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>card</title>
+    <link rel="stylesheet" href="https://unpkg.com/accordion-js@3.3.4/dist/accordion.min.css">
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-    
+  <div class="accordion-container">
+    <div class="ac">
+      <h1 class="ac-header">
+        <button type="button" class="ac-trigger">Sort</button>
+      </h1>
+      <div class="ac-panel">
+        <input type="text" placeholder="Search">
+      </div>
+    </div>
+    <div class="ac">
+      <h1 class="ac-header">
+        <button type="button" class="ac-trigger">Filters</button>
+      </h1>
+      <div class="ac-panel">
+        <input type="text" placeholder="Search">
+      </div>
+    </div>
+  </div>
+
     <card  data-id='' class="movieCard">
         <a href="movie.html" data-click="true" class="card-img-btn">
           <img
@@ -76,5 +95,16 @@
       </div>
 
       <script src="../js/card.js"></script>
+      <script src="https://unpkg.com/accordion-js@3.3.4/dist/accordion.min.js"></script>
+      <script>
+        new Accordion('.accordion-container',{
+  duration: 400,
+  showMultiple: true,
+  onOpen: function(currentElement) {
+    console.log('accordion ochildi');
+  }
+});
+
+      </script>
 </body>
 </html>
