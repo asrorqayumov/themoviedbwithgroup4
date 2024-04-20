@@ -1,197 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home page</title>
 
-    <!-- css file  -->
-    <link rel="stylesheet" href="/sass/main.css" />
-    <!-- bootstrap -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home page</title>
 
-  <body>
-    <!-- global conteiner -->
-    <div class="conteiner">
-      <section class="global-content">
-        <div class="conteiner-nav">
-          <div class="topnav" id="myTopnav">
-            <div class="link-side">
-              <a href="" class="TMDB">TMDB</a>
-              <a href="" class="film">Movies</a>
-              <div style="display: none" class="click">
-                <ul>
-                  <li><a href="">popular</a></li>
-                  <li><a href="">Now playin</a></li>
-                  <li><a href="">upcoming</a></li>
-                  <li><a href="">top reated</a></li>
-                </ul>
-              </div>
-              <a href="" class="twShows">Tw shows</a>
-              <div style="display: none" class="click tw-shows">
-                <ul>
-                  <li><a href="">popular</a></li>
-                  <li><a href="">airing today</a></li>
-                  <li><a href="">On tw </a></li>
-                  <li><a href="">top Rated</a></li>
-                </ul>
-              </div>
-              <a href="" class="people-a">people</a>
-              <div style="display: none" class="click people">
-                <ul>
-                  <li><a href="">popular people</a></li>
-                </ul>
-              </div>
-              <a href="" class="moreA">more</a>
-              <div style="display: none" class="click more">
-                <ul>
-                  <li><a href="">Discussions</a></li>
-                  <li><a href="">Leaderboard</a></li>
-                  <li><a href="">Support</a></li>
-                  <li><a href="">Api</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="search-side">
-              <a href="">Войти</a>
-              <a href="">Присоединиться к TMDB</a>
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <a href="javascript:void(0);" class="icon" onclick="navTogle()">
-                <i class="fa fa-bars"></i>
-              </a>
-            </div>
-          </div>
-          <div class="search-movie">
-            <div class="title">
-              <h1>Welcome.</h1>
-              <h2>
-                Milions of vovies, Tw show and people to discovcer. Explore now
-              </h2>
-            </div>
-            <div class="search">
-              <div class="search-content">
-                <input
-                  type="text"
-                  class="inp-search"
-                  placeholder="Найти фильм, сериал, персону......"
-                  autofill="off"
-                />
-              </div>
-              <button class="search-btn">search</button>
-            </div>
-          </div>
+  <!-- css file  -->
+  <link rel="stylesheet" href="/sass/main.css" />
+  <!-- bootstrap -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+</head>
 
-          <div class="oscars">
-            <div class="oscars-text">
-              <h1>Oscars</h1>
-              <button class="winn-btn">wiew the winners →</button>
-            </div>
-          </div>
-        </div>
-        <div class="trending">
-          <div class="togle-content">
-            <h1>trending</h1>
-            <div class="togle">
-              <span id="today">today</span>
-              <span id="week">this week</span>
-            </div>
-          </div>
-
-          <div class="card" style="display: none"></div>
-          <div class="card-week" style="display: none"></div>
-        </div>
-        <div class="lastest-trailers">
-          <div class="togle-content">
-            <h1>lastest trailers</h1>
-            <div class="togle">
-              <span id="popular">popular</span>
-              <span id="stream">in theaters</span>
-            </div>
-          </div>
-          <div style="display: none" class="popular">
-            <h1>popular</h1>
-          </div>
-          <div style="display: none" class="stream">
-            <h1>in theaters</h1>
-          </div>
-        </div>
-        <div class="center">
-          <div class="jointoday">
-            <div class="text">
-              <h1>Join Today</h1>
-              <p>
-                Get access to maintain your own custom personal lists, track
-                what you've seen and search and
-                <br />
-                filter for what to watch next—regardless if it's in theatres, on
-                TV or available <br />
-                on popular streaming services like Netflix, Amazon Prime Video,
-                Disney Plus, Apple TV <br />
-                Plus, and Hulu.
-              </p>
-              <button>sign-up</button>
-            </div>
-            <div class="list">
+<body>
+  <!-- global conteiner -->
+  <div class="conteiner">
+    <section class="global-content">
+      <div class="conteiner-nav">
+        <div class="topnav" id="myTopnav">
+          <div class="link-side">
+            <a href="movie.html" class="TMDB">TMDB</a>
+            <a href="" class="film">Movies</a>
+            <div style="display: none" class="click">
               <ul>
-                <li>Enjoy TMDB ad free</li>
-                <li>Maintain a personal watchlist</li>
-                <li>
-                  Filter by your subscribed streaming services and find
-                  something to watch
-                </li>
-                <li>Log the movies and TV shows you've seen</li>
-                <li>Build custom lists</li>
-                <li>Contribute to and improve our database</li>
+                <li><a href="">popular</a></li>
+                <li><a href="">Now playin</a></li>
+                <li><a href="">upcoming</a></li>
+                <li><a href="">top reated</a></li>
+              </ul>
+            </div>
+            <a href="" class="twShows">Tw shows</a>
+            <div style="display: none" class="click tw-shows">
+              <ul>
+                <li><a href="">popular</a></li>
+                <li><a href="">airing today</a></li>
+                <li><a href="">On tw </a></li>
+                <li><a href="">top Rated</a></li>
+              </ul>
+            </div>
+            <a href="" class="people-a">people</a>
+            <div style="display: none" class="click people">
+              <ul>
+                <li><a href="">popular people</a></li>
+              </ul>
+            </div>
+            <a href="" class="moreA">more</a>
+            <div style="display: none" class="click more">
+              <ul>
+                <li><a href="">Discussions</a></li>
+                <li><a href="">Leaderboard</a></li>
+                <li><a href="">Support</a></li>
+                <li><a href="">Api</a></li>
               </ul>
             </div>
           </div>
-        </div>
-
-        <div class="footer">
-          <div class="footer-wit">
-            <div class="img">
-              <img src="/assets/img/2560px-Tmdb.new.logo.svg.png" alt="" />
-              <button>join the comunity</button>
-            </div>
-            <div class="text">
-              <h2>THE BASICS</h2>
-              <p>About TMDB</p>
-              <p>contact us</p>
-              <p>support forums</p>
-              <p>api</p>
-              <p>system status</p>
-            </div>
-            <div class="text">
-              <h2>GET INVOLVED</h2>
-              <p>Contribution Bible</p>
-              <p>Add New Movie</p>
-              <p>Add New TV Show</p>
-            </div>
-            <div class="text">
-              <h2>COMMUNITY</h2>
-              <p>Guidelines</p>
-              <p>Discussions</p>
-              <p>Leaderboard</p>
-            </div>
-            <div class="text">
-              <h2>LEGAL</h2>
-              <p>Terms of Use</p>
-              <p>API Terms of Use</p>
-              <p>Privacy Policy</p>
-              <p>DMCA Policy</p>
-            </div>
+          <div class="search-side">
+            <a href="">Войти</a>
+            <a href="">Присоединиться к TMDB</a>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <a href="javascript:void(0);" class="icon" onclick="navTogle()">
+              <i class="fa fa-bars"></i>
+            </a>
           </div>
         </div>
-      </section>
-    </div>
-    <div id="overlay" class="overlay d-flex d-none">
-      <div class="spinner-border text-light" role="status">
-        <span class="sr-only"></span>
+        <div class="search-movie">
+          <div class="title">
+            <h1>Welcome.</h1>
+            <h2>
+              Milions of vovies, Tw show and people to discovcer. Explore now
+            </h2>
+          </div>
+          <div class="search">
+            <div class="search-content">
+              <input type="text" class="inp-search" placeholder="Найти фильм, сериал, персону......" autofill="off" />
+            </div>
+            <button class="search-btn">search</button>
+          </div>
+        </div>
+
+        <div class="oscars">
+          <div class="oscars-text">
+            <h1>Oscars</h1>
+            <button class="winn-btn">wiew the winners →</button>
+          </div>
+        </div>
       </div>
+      <div class="trending">
+        <div class="togle-content">
+          <h1>trending</h1>
+          <input type="checkbox" id="toggle" class="toggleCheckbox" />
+          <label for="toggle" class='toggleContainer'>
+            <div class="daytrending">day</div>
+            <div class="weektrending">week</div>
+          </label>
+        </div>
+        <div class="card"></div>
+        <div class="card-week" style="display: none"></div>
+      </div>
+      <div class="random-bg">
+        <div class="bg"></div>
+      </div>
+      <div class="popular">
+        <div class="togle-content">
+          <h1>whats popular</h1>
+          <input type="checkbox" id="togglee" class="toggleCheckboxx" />
+          <label for="togglee" class='toggleContainerr'>
+            <span class="daypopular">day</span>
+            <span class="in-theat">in Theaters</span>
+          </label>
+        </div>
+        <div style="display: none" class="popular">
+          <h1>popular</h1>
+        </div>
+        <div style="display: none" class="stream">
+          <h1>in theaters</h1>
+        </div>
+      </div>
+      <div class="center">
+        <div class="jointoday">
+          <div class="text">
+            <h1>Join Today</h1>
+            <p>
+              Get access to maintain your own custom personal lists, track
+              what you've seen and search and
+              <br />
+              filter for what to watch next—regardless if it's in theatres, on
+              TV or available <br />
+              on popular streaming services like Netflix, Amazon Prime Video,
+              Disney Plus, Apple TV <br />
+              Plus, and Hulu.
+            </p>
+            <button>sign-up</button>
+          </div>
+          <div class="list">
+            <ul>
+              <li>Enjoy TMDB ad free</li>
+              <li>Maintain a personal watchlist</li>
+              <li>
+                Filter by your subscribed streaming services and find
+                something to watch
+              </li>
+              <li>Log the movies and TV shows you've seen</li>
+              <li>Build custom lists</li>
+              <li>Contribute to and improve our database</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="footer-wit">
+          <div class="img">
+            <img src="/assets/img/2560px-Tmdb.new.logo.svg.png" alt="" />
+            <button>join the comunity</button>
+          </div>
+          <div class="text">
+            <h2>THE BASICS</h2>
+            <p>About TMDB</p>
+            <p>contact us</p>
+            <p>support forums</p>
+            <p>api</p>
+            <p>system status</p>
+          </div>
+          <div class="text">
+            <h2>GET INVOLVED</h2>
+            <p>Contribution Bible</p>
+            <p>Add New Movie</p>
+            <p>Add New TV Show</p>
+          </div>
+          <div class="text">
+            <h2>COMMUNITY</h2>
+            <p>Guidelines</p>
+            <p>Discussions</p>
+            <p>Leaderboard</p>
+          </div>
+          <div class="text">
+            <h2>LEGAL</h2>
+            <p>Terms of Use</p>
+            <p>API Terms of Use</p>
+            <p>Privacy Policy</p>
+            <p>DMCA Policy</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div id="overlay" class="overlay d-flex d-none">
+    <div class="spinner-border text-light" role="status">
+      <span class="sr-only"></span>
     </div>
-    <script type="module" src="../node_modules/moment/moment.js"></script>
-    <script type="module" src="../js/main.js"></script>
-    <script type="module" src="../js/card.js"></script>
-  </body>
+  </div>
+  <script type="module" src="../node_modules/moment/moment.js"></script>
+  <script type="module" src="../js/main.js"></script>
+  <script type="module" src="../js/card.js"></script>
+</body>
+
 </html>
