@@ -13,6 +13,7 @@
       position: fixed;
       top: 0;
       width: 100%;
+      z-index: 2;
 
       .search {
         display: flex;
@@ -42,14 +43,16 @@
           width: 150px;
           position: absolute;
           top: 40px;
-          left: 120px ;
-          ul{
-            li{
+          left: 120px;
+
+          ul {
+            li {
               list-style: none;
               position: relative;
               left: 20px;
             }
           }
+
           a {
             position: relative;
             color: black;
@@ -58,16 +61,19 @@
             left: -30px;
           }
         }
-        .tw-shows{
+
+        .tw-shows {
           position: absolute;
           top: 40px;
-          left: 210px ;
+          left: 210px;
         }
-        .people{
+
+        .people {
           position: absolute;
           left: 300px;
         }
-        .more{
+
+        .more {
           position: absolute;
           left: 380px;
         }
@@ -129,7 +135,7 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      height: 35vh;
+      height: 45vh;
       color: white;
       display: flex;
       flex-direction: column;
@@ -158,6 +164,7 @@
         display: flex;
         margin-top: 30px;
         width: 90%;
+
         .inp-search {
           width: 100%;
           height: 45px;
@@ -178,6 +185,7 @@
       .search {
         display: flex;
         justify-content: center;
+
         .search-btn {
           position: relative;
           left: -30px;
@@ -191,10 +199,11 @@
           font-size: 1em;
           font-weight: 600;
           margin-top: 27px;
-       
+          z-index: 1;
+
         }
 
-  
+
       }
     }
 
@@ -226,6 +235,64 @@
     .trending {
       margin-left: 30px;
 
+      .toggleContainer {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 200px;
+        border: 1px solid black;
+        border-radius: 20px;
+        background: white;
+        font-weight: bold;
+        color: #343434;
+        cursor: pointer;
+      }
+
+      .toggleContainer::before {
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        left: 0%;
+        border-radius: 20px;
+        background: blue;
+        transition: all 0.3s;
+      }
+
+      .toggleCheckbox:checked+.toggleContainer::before {
+        left: 50%;
+      }
+
+      .toggleContainer div {
+        padding: 6px;
+        text-align: center;
+        z-index: 1;
+      }
+
+      .toggleCheckbox {
+        display: none;
+      }
+
+      .toggleCheckbox:checked+.toggleContainer div:first-child {
+        color: greenyellow;
+        transition: color 0.3s;
+      }
+
+      .toggleCheckbox:checked+.toggleContainer div:last-child {
+        color: greenyellow;
+        transition: color 0.3s;
+      }
+
+      .toggleCheckbox+.toggleContainer div:first-child {
+        color: black;
+        transition: color 0.3s;
+      }
+
+      .toggleCheckbox+.toggleContainer div:last-child {
+        color: black;
+        transition: color 0.3s;
+      }
+
       .togle-content {
         display: flex;
         align-items: center;
@@ -236,53 +303,40 @@
 
       }
 
-      .togle-clas {
-        width: 90px;
-        height: 30px;
-        display: flex;
-        background-color: blue;
-        opacity: 0.5;
-        border-radius: 12px;
-        align-items: center;
-        justify-content: center;
-        transition: all 2s;
-      }
-
-      .togle {
-        display: flex;
-        border-radius: 12px;
-        border: 2px solid black;
-        width: 200px;
-        height: 30px;
-        justify-content: space-around;
-        align-items: center;
-        margin-top: 15px;
-        margin-left: 20px;
-
-        span {
-          font-size: 1em;
-          color: black;
-          opacity: 1;
-        }
-
-
-      }
       .card-week {
         display: flex;
         padding-top: 25px;
         overflow-x: scroll;
         overflow-y: hidden;
-        card{
+
+        card {
           flex-wrap: wrap;
           padding-left: 25px;
         }
       }
-      .card{
+
+      ::-webkit-scrollbar {
+        height: 10px;
+        border-radius: 7px;
+      }
+
+      ::-webkit-scrollbar-track {
+        // box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: rgba(128, 128, 128, 0.315);
+        border-radius: 10px;
+      }
+
+      .card {
         display: flex;
         padding-top: 25px;
         overflow-x: scroll;
         overflow-y: hidden;
-        card{
+
+        card {
           flex-wrap: wrap;
           padding-left: 25px;
         }
@@ -333,45 +387,72 @@
     }
 
 
-    .lastest-trailers {
+    .popular {
       margin-left: 30px;
-      display: flex;
-      .togle-content {
-        display: flex;
-        align-items: center;
-      }
-      .togle-clas {
-        width: 90px;
-        height: 30px;
-        display: flex;
-        background-color: blue;
-        opacity: 0.5;
-        border-radius: 12px;
-        align-items: center;
-        justify-content: center;
-        transition: all 2s;
-      }
-
-      .togle {
-        display: flex;
-        border-radius: 12px;
-        border: 2px solid black;
-        width: 200px;
-        height: 33px;
-        justify-content: space-around;
-        align-items: center;
-        margin-top: 15px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+.togle-content{
+  display: flex;
+}
+      .toggleContainerr {
+        position: relative;
         margin-left: 20px;
-        margin-bottom: 10px;
-
-        span {
-          font-size: 1em;
-          color: black;
-          opacity: 1;
-        }
-
-
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 200px;
+        border: 1px solid black;
+        border-radius: 20px;
+        background: white;
+        font-weight: bold;
+        color: #343434;
+        cursor: pointer;
       }
+
+      .toggleContainerr::before {
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        left: 0%;
+        border-radius: 20px;
+        background: blue;
+        transition: all 0.3s;
+      }
+
+      .toggleCheckboxx:checked+.toggleContainerr::before {
+        left: 50%;
+      }
+
+      .toggleContainerr span {
+        padding: 6px;
+        text-align: center;
+        z-index: 1;
+      }
+
+      .toggleCheckboxx {
+        display: none;
+      }
+
+      .toggleCheckboxx:checked+.toggleContainerr span:first-child {
+        color: greenyellow;
+        transition: color 0.3s;
+      }
+
+      .toggleCheckboxx:checked+.toggleContainerr span:last-child {
+        color: greenyellow;
+        transition: color 0.3s;
+      }
+
+      .toggleCheckboxx+.toggleContainerr span:first-child {
+        color: black;
+        transition: color 0.3s;
+      }
+
+      .toggleCheckboxx+.toggleContainerr span:last-child {
+        color: black;
+        transition: color 0.3s;
+      }
+
     }
 
 
@@ -422,7 +503,7 @@
       .btn {
         display: flex;
 
-        .togle-clas {
+        .togle-clas{
           background-color: blue;
           width: 90px;
           height: 30px;
@@ -490,8 +571,19 @@
 
         }
       }
-
     }
+      .random-bg{
+        padding-top: 30px;
+        .bg{
+          background-image: url();
+          width: 100%;
+          height: 40vh;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+        }
+      }
+
   }
 
 }

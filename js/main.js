@@ -11,47 +11,6 @@ function navTogle() {
 
 
 
-let span = document.querySelectorAll('span')
-span.forEach((e) => {
-  e.addEventListener('click', (e) => {
-    function trending() {
-      let day = document.querySelector('#today')
-      let weekSpan = document.querySelector('#week')
-      let card = document.querySelector('.card')
-      let week = document.querySelector('.card-week')
-      if (e.target.id == 'today') {
-        day.classList.add('togle-clas')
-        weekSpan.classList.remove('togle-clas')
-        week.style.display = 'none'
-        card.style.display = 'flex'
-      }
-      if (e.target.id == 'week') {
-        week.style.display = 'flex'
-        card.style.display = 'none'
-        weekSpan.classList.add('togle-clas')
-        day.classList.remove('togle-clas')
-      }
-    }
-    trending()
-    //lastest trailesrs
-    function lastest() {
-      let popular = document.querySelector('#popular')
-      let stream = document.querySelector('#stream')
-      if (e.target.id == 'popular') {
-        popular.classList.add('togle-clas')
-        stream.classList.remove('togle-clas')
-      }
-      if (e.target.id == 'stream') {
-        stream.classList.add('togle-clas')
-        popular.classList.remove('togle-clas')
-      }
-    }
-    lastest()
-  })
-})
-
-
-
 function navItem() {
   let film = document.querySelector('.film')
   let navClick = document.querySelector('.click')
@@ -93,5 +52,20 @@ function navItem() {
 navItem()
 
 
+
+let dayTrendung = document.querySelector('.daytrending')
+let weektrending = document.querySelector('.weektrending')
+dayTrendung.addEventListener('click',(e)=>{
+  let card = document.querySelector('.card')
+  let week = document.querySelector('.card-week')
+  card.style.display = 'flex'
+  week.style.display = 'none'
+})
+weektrending.addEventListener('click',(e)=>{
+  let card = document.querySelector('.card')
+  let week = document.querySelector('.card-week')
+  card.style.display = 'none'
+  week.style.display = 'flex'
+})
 
 

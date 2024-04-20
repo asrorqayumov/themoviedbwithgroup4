@@ -1,28 +1,28 @@
 import moment from "../node_modules/moment/dist/moment.js";
 
 export function calcVoteAverage(vote) {
-  return  Math.round(vote * 10) 
- }
+  return Math.round(vote * 10)
+}
 
 
- async  function getPopularMovies() {
+async function getPopularMovies() {
   try {
     let request = await fetch(
-      "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
+      'https://api.themoviedb.org/3/trending/movie/week?language=en-US',
       {
         headers: {
           accept: "application/json",
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MGJkOWU4ZDY3OGJiMjYwZGRlYWJjNmJjMzY1MjllZSIsInN1YiI6IjY2MTdlNDllMGE1MTdjMDE2M2ZmYTRjNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mmkz0i2Ggj88vHj8K8yDCC15_oP2JfXHbbpBJejtwxU",
+            'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MGJkOWU4ZDY3OGJiMjYwZGRlYWJjNmJjMzY1MjllZSIsInN1YiI6IjY2MTdlNDllMGE1MTdjMDE2M2ZmYTRjNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mmkz0i2Ggj88vHj8K8yDCC15_oP2JfXHbbpBJejtwxU',
         },
       }
     );
 
     let data = await request.json();
-
+    
     return data.results;
   } catch (err) {
-    console.error(err);
+    console.error('hello error');
   }
 }
 
@@ -31,8 +31,6 @@ function displayMovies(movieList) {
   let cardList = document.querySelector(".card-week");
   let html = "";
   movieList.forEach((movie) => {
-
-    console.log(movie);
     html += ` <card  data-id='' class="movieCard">
       <a href="movie.html" data-click="true" class="card-img-btn">
         <img
@@ -98,11 +96,34 @@ function displayMovies(movieList) {
     `;
   });
   cardList.innerHTML = html;
+}
 
- //today movies
- let cardToday = document.querySelector(".card");
+
+async function getPopularMoviesDay() {
+  try {
+    let request = await fetch(
+      'https://api.themoviedb.org/3/trending/movie/day?language=en-US',
+      {
+        headers: {
+          accept: "application/json",
+          Authorization:
+            'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MGJkOWU4ZDY3OGJiMjYwZGRlYWJjNmJjMzY1MjllZSIsInN1YiI6IjY2MTdlNDllMGE1MTdjMDE2M2ZmYTRjNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mmkz0i2Ggj88vHj8K8yDCC15_oP2JfXHbbpBJejtwxU',
+        },
+      }
+    );
+
+    let data = await request.json();
+
+    return data.results;
+  } catch (err) {
+    console.error('hello error');
+  }
+}
+function displayMoviesDay(data) {
+  //today movies
+  let cardToday = document.querySelector(".card");
   let html2 = "";
-  movieList.forEach((movie) => {
+  data.forEach((movie) => {
     html2 += ` <card  data-id='' class="movieCard">
       <a href="movie.html" data-click="true" class="card-img-btn">
         <img
@@ -155,10 +176,10 @@ function displayMovies(movieList) {
         <div class="circle-progressbar">
           <div
             role="progressbar"
-            aria-valuenow="88"
+            aria-valuenow="${calcVoteAverage(movie.vote_average)}"
             aria-valuemin="0"
             aria-valuemax="100"
-            style="--value: 88"
+            style="--value:${calcVoteAverage(movie.vote_average)}"
           ></div>
         </div>
         <a href="movie.html" data-click="true" class="card-title"> ${movie.title} </a>
@@ -170,8 +191,35 @@ function displayMovies(movieList) {
   cardToday.innerHTML = html2;
 }
 
-
 getPopularMovies().then((data) => {
   displayMovies(data)
-  console.log(data);
 });
+getPopularMoviesDay().then((data) => {
+  displayMoviesDay(data)
+});
+
+
+
+const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MGJkOWU4ZDY3OGJiMjYwZGRlYWJjNmJjMzY1MjllZSIsInN1YiI6IjY2MTdlNDllMGE1MTdjMDE2M2ZmYTRjNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mmkz0i2Ggj88vHj8K8yDCC15_oP2JfXHbbpBJejtwxU'
+  }
+};
+
+fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', options)
+  .then(response => response.json())
+  .then(response => randomBg(response))
+  .catch(err => console.error(err));
+  
+
+  function randomBg(data) {
+    setInterval(()=>{
+   let randomNum = Math.trunc(Math.random() * 20 )   
+    let bg = document.querySelector('.bg')
+    bg.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${data.results[randomNum].poster_path})`
+    },3000)
+
+
+  }
