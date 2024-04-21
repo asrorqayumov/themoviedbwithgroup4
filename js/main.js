@@ -17,7 +17,13 @@ function navItem() {
   film.addEventListener('mouseover', (e) => {
     navClick.style.display = 'flex'
   })
+  navClick.addEventListener('mouseover', (e) => {
+    navClick.style.display = 'flex'
+  })
   film.addEventListener('mouseout', (e) => {
+    navClick.style.display = 'none'
+  })
+  navClick.addEventListener('mouseout', (e) => {
     navClick.style.display = 'none'
   })
 
@@ -25,6 +31,12 @@ function navItem() {
   let twshows = document.querySelector('.tw-shows')
   twshow.addEventListener('mouseover', (e) => {
     twshows.style.display = 'flex'
+  })
+  twshows.addEventListener('mouseover', (e) => {
+    twshows.style.display = 'flex'
+  })
+  twshows.addEventListener('mouseout', (e) => {
+    twshows.style.display = 'none'
   })
   twshow.addEventListener('mouseout', (e) => {
     twshows.style.display = 'none'
@@ -35,6 +47,12 @@ function navItem() {
   peopleA.addEventListener('mouseover', (e) => {
     people.style.display = 'flex'
   })
+  people.addEventListener('mouseover', (e) => {
+    people.style.display = 'flex'
+  })
+  people.addEventListener('mouseout', (e) => {
+    people.style.display = 'none'
+  })
   peopleA.addEventListener('mouseout', (e) => {
     people.style.display = 'none'
   })
@@ -43,6 +61,13 @@ function navItem() {
   let more = document.querySelector('.more')
   moreA.addEventListener('mouseover', (e) => {
     more.style.display = 'flex'
+  })
+  more.addEventListener('mouseover', (e) => {
+    more.style.display = 'flex'
+  })
+
+  more.addEventListener('mouseout', (e) => {
+    more.style.display = 'none'
   })
   moreA.addEventListener('mouseout', (e) => {
     more.style.display = 'none'

@@ -215,11 +215,7 @@ fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', options)
   
 
   function randomBg(data) {
-    setInterval(()=>{
    let randomNum = Math.trunc(Math.random() * 20 )   
     let bg = document.querySelector('.bg')
     bg.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${data.results[randomNum].poster_path})`
-    },3000)
-
-
   }

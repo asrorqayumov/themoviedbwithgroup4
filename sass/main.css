@@ -2526,4 +2526,12 @@
 .conteiner-movie .cast .video .top {
   padding-left: 100px;
   padding-top: 25px;
+}
+.conteiner-movie .cast .video .about {
+  padding-left: 30px;
+  padding-top: 50px;
+}
+.conteiner-movie .cast .video .about .profile i {
+  font-size: 30px;
+  padding-left: 10px;
 }/*# sourceMappingURL=main.css.map */
