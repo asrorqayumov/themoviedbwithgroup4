@@ -1,5 +1,5 @@
 import * as HomePage from "./main.js";
-import * as movieeeeeeeee from "./movie.js";
+import * as movieeeeeee from "./movie.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   if (
