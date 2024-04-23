@@ -4,8 +4,70 @@ import config from "./config.js";
 export function calcVoteAverage(vote) {
   return Math.round(vote * 10);
 }
+export function navItem() {
+  let film = document.querySelector(".film");
+  let navClick = document.querySelector(".click");
+  film.addEventListener("mouseover", (e) => {
+    navClick.style.display = "flex";
+  });
+  navClick.addEventListener("mouseover", (e) => {
+    navClick.style.display = "flex";
+  });
+  film.addEventListener("mouseout", (e) => {
+    navClick.style.display = "none";
+  });
+  navClick.addEventListener("mouseout", (e) => {
+    navClick.style.display = "none";
+  });
 
- export async function getTrendingMovies() {
+  let twshow = document.querySelector(".twShows");
+  let twshows = document.querySelector(".tw-shows");
+  twshow.addEventListener("mouseover", (e) => {
+    twshows.style.display = "flex";
+  });
+  twshows.addEventListener("mouseover", (e) => {
+    twshows.style.display = "flex";
+  });
+  twshows.addEventListener("mouseout", (e) => {
+    twshows.style.display = "none";
+  });
+  twshow.addEventListener("mouseout", (e) => {
+    twshows.style.display = "none";
+  });
+
+  let peopleA = document.querySelector(".people-a");
+  let people = document.querySelector(".people");
+  peopleA.addEventListener("mouseover", (e) => {
+    people.style.display = "flex";
+  });
+  people.addEventListener("mouseover", (e) => {
+    people.style.display = "flex";
+  });
+  people.addEventListener("mouseout", (e) => {
+    people.style.display = "none";
+  });
+  peopleA.addEventListener("mouseout", (e) => {
+    people.style.display = "none";
+  });
+
+  let moreA = document.querySelector(".moreA");
+  let more = document.querySelector(".more");
+  moreA.addEventListener("mouseover", (e) => {
+    more.style.display = "flex";
+  });
+  more.addEventListener("mouseover", (e) => {
+    more.style.display = "flex";
+  });
+
+  more.addEventListener("mouseout", (e) => {
+    more.style.display = "none";
+  });
+  moreA.addEventListener("mouseout", (e) => {
+    more.style.display = "none";
+  });
+}
+
+export async function getTrendingMovies() {
   try {
     let request = await fetch(
       `${config.BACKEND_MAIN_URL}trending/movie/week?language=en-US`,
@@ -25,79 +87,15 @@ export function calcVoteAverage(vote) {
   }
 }
 
-
-
- export function navItem() {
-  let film = document.querySelector('.film')
-  let navClick = document.querySelector('.click')
-  film.addEventListener('mouseover', (e) => {
-    navClick.style.display = 'flex'
-  })
-  navClick.addEventListener('mouseover', (e) => {
-    navClick.style.display = 'flex'
-  })
-  film.addEventListener('mouseout', (e) => {
-    navClick.style.display = 'none'
-  })
-  navClick.addEventListener('mouseout', (e) => {
-    navClick.style.display = 'none'
-  })
-
-  let twshow = document.querySelector('.twShows')
-  let twshows = document.querySelector('.tw-shows')
-  twshow.addEventListener('mouseover', (e) => {
-    twshows.style.display = 'flex'
-  })
-  twshows.addEventListener('mouseover', (e) => {
-    twshows.style.display = 'flex'
-  })
-  twshows.addEventListener('mouseout', (e) => {
-    twshows.style.display = 'none'
-  })
-  twshow.addEventListener('mouseout', (e) => {
-    twshows.style.display = 'none'
-  })
-
-  let peopleA = document.querySelector('.people-a')
-  let people = document.querySelector('.people')
-  peopleA.addEventListener('mouseover', (e) => {
-    people.style.display = 'flex'
-  })
-  people.addEventListener('mouseover', (e) => {
-    people.style.display = 'flex'
-  })
-  people.addEventListener('mouseout', (e) => {
-    people.style.display = 'none'
-  })
-  peopleA.addEventListener('mouseout', (e) => {
-    people.style.display = 'none'
-  })
-
-  let moreA = document.querySelector('.moreA')
-  let more = document.querySelector('.more')
-  moreA.addEventListener('mouseover', (e) => {
-    more.style.display = 'flex'
-  })
-  more.addEventListener('mouseover', (e) => {
-    more.style.display = 'flex'
-  })
-
-  more.addEventListener('mouseout', (e) => {
-    more.style.display = 'none'
-  })
-  moreA.addEventListener('mouseout', (e) => {
-    more.style.display = 'none'
-  })
-}
-
 export function displayTrendingMovies(movieList) {
   //this week movies
   let cardList = document.querySelector(".card-week");
   let html = "";
   movieList.forEach((movie) => {
     html += ` <card  data-id='' class="movieCard">
-      <a href="movie.html" data-click="true" class="card-img-btn">
+      <a href="" data-click="true" class="card-img-btn">
         <img
+          id="${movie.id}"
           class="card-img img-fluid"
           src="https://image.tmdb.org/t/p/w500${movie.poster_path}"
           alt="something movie"
@@ -189,8 +187,9 @@ export function displayTrendingMoviesDay(data) {
   let html2 = "";
   data.forEach((movie) => {
     html2 += ` <card  data-id='' class="movieCard">
-      <a href="movie.html" data-click="true" class="card-img-btn">
+      <a href="" data-click="true" class="card-img-btn">
         <img
+          id="${movie.id}"
           class="card-img img-fluid"
           src="https://image.tmdb.org/t/p/w500${movie.poster_path}"
           alt="something movie"
@@ -255,10 +254,19 @@ export function displayTrendingMoviesDay(data) {
     `;
   });
   cardToday.innerHTML = html2;
-
 }
 
+export function setEventImg() {
+  let cardImg = document.querySelectorAll(".card-img");
 
+  cardImg.forEach((img) => {
+    img.addEventListener("click", (e) => {
+      e.preventDefault();
+      history.pushState(e.target.id, "", "movie.html");
+      location.reload()
+    });
+  });
+}
 
 export function randomBg(data) {
   let randomNum = Math.trunc(Math.random() * 20);
