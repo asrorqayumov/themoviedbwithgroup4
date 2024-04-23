@@ -1993,6 +1993,8 @@
   font-weight: bold;
   color: #343434;
   cursor: pointer;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 .conteiner .global-content .trending .toggleContainer::before {
   content: "";
@@ -2034,9 +2036,11 @@
 .conteiner .global-content .trending .togle-content {
   display: flex;
   align-items: center;
+  padding-top: 25px;
 }
 .conteiner .global-content .trending .togle-content h1 {
   padding-top: 15px;
+  padding-left: 30px;
 }
 .conteiner .global-content .trending .card-week {
   display: flex;
@@ -2425,6 +2429,9 @@
 .conteiner-movie .header .bg-img .text-side .user-score .d-flex p {
   font-size: 25px;
 }
+.conteiner-movie .header .bg-img .text-side .user-score .d-flex p:hover {
+  background-color: orange;
+}
 .conteiner-movie .header .bg-img .text-side .user-score .movie-btn {
   border-radius: 8px;
   padding: 0 12px;
@@ -2526,4 +2533,12 @@
 .conteiner-movie .cast .video .top {
   padding-left: 100px;
   padding-top: 25px;
+}
+.conteiner-movie .cast .video .about {
+  padding-left: 30px;
+  padding-top: 50px;
+}
+.conteiner-movie .cast .video .about .profile i {
+  font-size: 30px;
+  padding-left: 10px;
 }/*# sourceMappingURL=main.css.map */
