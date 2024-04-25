@@ -276,12 +276,12 @@
       }
 
       .toggleCheckbox:checked+.toggleContainer div:first-child {
-        color: greenyellow;
+        color: black;
         transition: color 0.3s;
       }
 
       .toggleCheckbox:checked+.toggleContainer div:last-child {
-        color: greenyellow;
+        color: black;
         transition: color 0.3s;
       }
 
@@ -343,7 +343,9 @@
         card {
           flex-wrap: wrap;
           padding-left: 25px;
+
         }
+
       }
     }
 
@@ -395,9 +397,39 @@
       margin-left: 30px;
       padding-top: 30px;
       padding-bottom: 30px;
-.togle-content{
-  display: flex;
-}
+
+      ::-webkit-scrollbar {
+        height: 10px;
+        border-radius: 7px;
+      }
+
+      ::-webkit-scrollbar-track {
+        // box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: rgba(128, 128, 128, 0.315);
+        border-radius: 10px;
+      }
+
+      .card-popular {
+        display: flex;
+        overflow-x: scroll;
+        overflow-y: hidden;
+
+        card {
+          padding-left: 25px;
+          padding-right: 25px;
+          padding-top: 20px;
+          flex-wrap: wrap;
+        }
+      }
+
+      .togle-content {
+        display: flex;
+      }
+
       .toggleContainerr {
         position: relative;
         margin-left: 20px;
@@ -438,12 +470,12 @@
       }
 
       .toggleCheckboxx:checked+.toggleContainerr span:first-child {
-        color: greenyellow;
+        color: black;
         transition: color 0.3s;
       }
 
       .toggleCheckboxx:checked+.toggleContainerr span:last-child {
-        color: greenyellow;
+        color: black;
         transition: color 0.3s;
       }
 
@@ -507,7 +539,7 @@
       .btn {
         display: flex;
 
-        .togle-clas{
+        .togle-clas {
           background-color: blue;
           width: 90px;
           height: 30px;
@@ -576,17 +608,22 @@
         }
       }
     }
-      .random-bg{
-        padding-top: 30px;
-        .bg{
-          background-image: url();
-          width: 100%;
-          height: 40vh;
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: cover;
-        }
+
+    .random-bg {
+      padding-top: 30px;
+      display: flex;
+      justify-content: center;
+
+      .bg {
+        background-image: url();
+        width: 60%;
+        height: 40vh;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
       }
+    }
 
   }
 
