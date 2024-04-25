@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .m-1 {
   margin: 5px;
 }
@@ -2018,11 +2019,11 @@
   display: none;
 }
 .conteiner .global-content .trending .toggleCheckbox:checked + .toggleContainer div:first-child {
-  color: greenyellow;
+  color: black;
   transition: color 0.3s;
 }
 .conteiner .global-content .trending .toggleCheckbox:checked + .toggleContainer div:last-child {
-  color: greenyellow;
+  color: black;
   transition: color 0.3s;
 }
 .conteiner .global-content .trending .toggleCheckbox + .toggleContainer div:first-child {
@@ -2108,6 +2109,28 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
+.conteiner .global-content .popular ::-webkit-scrollbar {
+  height: 10px;
+  border-radius: 7px;
+}
+.conteiner .global-content .popular ::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+.conteiner .global-content .popular ::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.315);
+  border-radius: 10px;
+}
+.conteiner .global-content .popular .card-popular {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.conteiner .global-content .popular .card-popular card {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
 .conteiner .global-content .popular .togle-content {
   display: flex;
 }
@@ -2146,11 +2169,11 @@
   display: none;
 }
 .conteiner .global-content .popular .toggleCheckboxx:checked + .toggleContainerr span:first-child {
-  color: greenyellow;
+  color: black;
   transition: color 0.3s;
 }
 .conteiner .global-content .popular .toggleCheckboxx:checked + .toggleContainerr span:last-child {
-  color: greenyellow;
+  color: black;
   transition: color 0.3s;
 }
 .conteiner .global-content .popular .toggleCheckboxx + .toggleContainerr span:first-child {
@@ -2256,10 +2279,12 @@
 }
 .conteiner .global-content .random-bg {
   padding-top: 30px;
+  display: flex;
+  justify-content: center;
 }
 .conteiner .global-content .random-bg .bg {
   background-image: url();
-  width: 100%;
+  width: 60%;
   height: 40vh;
   background-repeat: no-repeat;
   background-position: center;
@@ -2290,7 +2315,6 @@
   top: 0;
   width: 100%;
   z-index: 2;
-  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 }
 .conteiner-movie .topnav .search {
   display: flex;
@@ -2353,54 +2377,36 @@
 .conteiner-movie .topnav .icon {
   display: none;
 }
-@media screen and (max-width: 600px) {
-  .conteiner-movie .topnav a:not(:first-child) {
-    display: none;
-  }
-  .conteiner-movie .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-@media screen and (max-width: 600px) {
-  .conteiner-movie .topnav .responsive {
-    position: relative;
-  }
-  .conteiner-movie .topnav .responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .conteiner-movie .topnav .responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
 .conteiner-movie .topnav .search-side .fa-magnifying-glass {
   color: white;
   width: 45px;
   height: 35px;
   padding: 15px 18px;
 }
+.conteiner-movie .header {
+  color: white;
+}
 .conteiner-movie .header .bg-img {
   display: flex;
   padding-top: 40px;
   margin-top: 30px;
+  background-image: url(/assets/img/Без\ названия.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .conteiner-movie .header .bg-img .img-side {
-  background-image: url(/assets/img/images.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  padding-left: 100px;
+}
+.conteiner-movie .header .bg-img .img-side .img-se {
   width: 300px;
   height: 450px;
-  margin-left: 100px;
 }
 .conteiner-movie .header .bg-img .text-side {
   margin-left: 80px;
   width: -moz-max-content;
   width: max-content;
-  height: 450px;
+  height: 500px;
 }
 .conteiner-movie .header .bg-img .text-side .pley-trailer {
   padding-top: 20px;
@@ -2430,7 +2436,7 @@
   font-size: 25px;
 }
 .conteiner-movie .header .bg-img .text-side .user-score .d-flex p:hover {
-  background-color: orange;
+  color: orange;
 }
 .conteiner-movie .header .bg-img .text-side .user-score .movie-btn {
   border-radius: 8px;
@@ -2518,11 +2524,12 @@
 .conteiner-movie .cast .video .cardd .flex .person {
   border-radius: 7px;
   margin-left: 30px;
-  padding-top: 15px;
+  margin-top: 15px;
 }
 .conteiner-movie .cast .video .cardd .flex .person .border {
   border: 1px solid black;
   border-radius: 7px;
+  height: 290px;
 }
 .conteiner-movie .cast .video .cardd .flex .person .border img {
   width: 150px;

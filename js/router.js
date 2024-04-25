@@ -15,13 +15,17 @@ document.addEventListener("DOMContentLoaded", () => {
       HomePage.displayTrendingMoviesDay(data);
       HomePage.setEventImg();
     });
+    HomePage.getPopularMovies().then((data)=>{
+      HomePage.displaypopularMovies(data)
+    })
   }
   if (location.href == "http://127.0.0.1:5501/view/movie.html") {
     HomePage.navItem();
-
     MoviePage.getMovieDetails(history.state).then((data)=>{
-      console.log(data);
-
+    MoviePage.displayShow(data)  
+    MoviePage.getPeopleCredits(history.state).then((data)=>{
+      MoviePage.displayPeople(data)
+    })
     })
     
   }
