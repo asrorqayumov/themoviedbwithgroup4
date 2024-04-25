@@ -273,10 +273,12 @@ export function randomBg(data) {
   let bg = document.querySelector(".bg");
   bg.style.backgroundImage = `url(${config.BASE_IMG_URL}${data[randomNum].poster_path})`;
 }
+
+
 export async function getPopularMovies() {
   try {
     let request = await fetch(
-      `${config.BACKEND_MAIN_URL}trending/movie/week?language=en-US`,
+      `${config.BACKEND_MAIN_URL}movie/popular?language=en-US&page=1`,
       {
         headers: {
           accept: "application/json",
@@ -287,7 +289,7 @@ export async function getPopularMovies() {
 
     let data = await request.json();
 
-    displaypopularMovies(data.results)
+    return data.results;
   } catch (err) {
     console.error("hello error");
   }

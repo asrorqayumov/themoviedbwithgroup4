@@ -1,6 +1,9 @@
 import * as HomePage from "./main.js";
-import * as  MoviePage from "./movie.js";
+import * as MoviePage from "./movie.js";
 
+window.addEventListener("popstate", (e) => {
+  location.reload();
+});
 document.addEventListener("DOMContentLoaded", () => {
   if (
     location.href == "http://127.0.0.1:5501/view/" ||
@@ -15,18 +18,18 @@ document.addEventListener("DOMContentLoaded", () => {
       HomePage.displayTrendingMoviesDay(data);
       HomePage.setEventImg();
     });
-    HomePage.getPopularMovies().then((data)=>{
-      HomePage.displaypopularMovies(data)
-    })
+    HomePage.getPopularMovies().then((data) => {
+      HomePage.displaypopularMovies(data);
+    });
   }
   if (location.href == "http://127.0.0.1:5501/view/movie.html") {
     HomePage.navItem();
-    MoviePage.getMovieDetails(history.state).then((data)=>{
-    MoviePage.displayShow(data)  
-    MoviePage.getPeopleCredits(history.state).then((data)=>{
-      MoviePage.displayPeople(data)
-    })
-    })
-    
+    MoviePage.getMovieDetails(history.state).then((data) => {
+      document.title = `${data.title} | The movie Database `
+      MoviePage.displayShow(data);
+      MoviePage.getPeopleCredits(history.state).then((data) => {
+        MoviePage.displayPeople(data);
+      });
+    });
   }
 });

@@ -103,13 +103,11 @@ export async function getPeopleCredits(id) {
 export async function displayPeople(dataPeople) {
   let flex = document.querySelector('.flex')
   let people = ''
-  console.log(dataPeople);
   dataPeople.cast.forEach((data) => {
-    console.log(data);
     people += `
   <div class="person">
               <div class="border">
-                <img src="${config.BASE_IMG_URL + data.profile_path}" alt="">
+                <img src="${data.profile_path ? config.BASE_IMG_URL + data.profile_path: '../assets/img/avatarProfile.png'}" alt="">
                 <h2>${data.name}</h2>
                 <p>${data.character}</p>
               </div>
