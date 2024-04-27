@@ -1,0 +1,29 @@
+.popular-movie-people1{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-card {
+    max-width: 300px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 30px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+}
+
+
+.image-card img {
+    width: 300px;
+    height: auto;
+}
+
+.card-content {
+    text-align: center;
+}
+
+.popular-movie-people-container {
+    margin-top: 40px;
+   padding: 30px 20px 0px 50px;
+}
