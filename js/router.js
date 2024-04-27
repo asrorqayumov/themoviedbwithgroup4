@@ -1,5 +1,6 @@
 import * as HomePage from "./main.js";
 import * as MoviePage from "./movie.js";
+import * as PopularPeople from "./popularPeople.js";
 
 window.addEventListener("popstate", (e) => {
   location.reload();
@@ -31,5 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
         MoviePage.displayPeople(data);
       });
     });
+  }
+
+  if (location.href == "http://127.0.0.1:5502/view/popularPeople.html") {
+    PopularPeople.getPopularPeople().then((data)=>{
+       PopularPeople.displayPopularPeople(data);
+    })
   }
 });
