@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     MoviePage.getMovieDetails(history.state).then((data) => {
       document.title = `${data.title} | The movie Database `
       MoviePage.displayShow(data);
+      MoviePage.displayAbout()
       MoviePage.getPeopleCredits(history.state).then((data) => {
         MoviePage.displayPeople(data);
       });

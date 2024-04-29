@@ -13,7 +13,7 @@ export async function getMovieDetails(id) {
     );
 
     let data = await request.json();
-
+    displayAbout(data)
     return data;
   } catch (err) {
     console.error(err);
@@ -23,6 +23,7 @@ export function displayShow(movie) {
   let head = document.querySelector('.header')
   let htmlshow = "";
   htmlshow += `
+  <div class="gradient">
       <div style="background-image: url(${config.BASE_IMG_URL + movie.backdrop_path}) ;" class="bg-img" >
         <div class="img-side">
         <img class="img-se" src="${config.BASE_IMG_URL + movie.poster_path}" alt="">
@@ -75,8 +76,8 @@ export function displayShow(movie) {
 
           </div>
         </div>
-      </div>`
-
+      </div>
+  </div>`
   head.innerHTML = htmlshow;
 }
 
@@ -103,11 +104,11 @@ export async function getPeopleCredits(id) {
 export async function displayPeople(dataPeople) {
   let flex = document.querySelector('.flex')
   let people = ''
-  dataPeople.cast.forEach((data) => {
+ await dataPeople.cast.forEach((data) => {
     people += `
   <div class="person">
               <div class="border">
-                <img src="${data.profile_path ? config.BASE_IMG_URL + data.profile_path: '../assets/img/avatarProfile.png'}" alt="">
+                <img src="${data.profile_path ? config.BASE_IMG_URL + data.profile_path : '../assets/img/avatarProfile.png'}" alt="">
                 <h2>${data.name}</h2>
                 <p>${data.character}</p>
               </div>
@@ -116,3 +117,30 @@ export async function displayPeople(dataPeople) {
 
   flex.innerHTML = people;
 }
+export async function displayAbout(data) {
+  console.log(data);
+  let about = document.querySelector('.about')
+  let base = ''
+  base = `
+  <div class="column">
+  <div class="status top">
+    <h3>status</h3>
+    <p>${data.status}</p>
+  </div>
+  <div class="Original top">
+    <h3>Original Language</h3>
+    <p>${data.original_language}</p>
+  </div>
+  <div class="budget top">
+    <h3>Budget</h3>
+    <p>${data.budget}$</p>
+  </div>
+  <div class="Revenue top">
+    <h3>Revenue</h3>
+    <p>-</p>
+  </div>
+
+</div>`
+about.innerHTML = base
+}
+'https://api.themoviedb.org/3/movie/movie_id/recommendations?language=en-US&page=1'
