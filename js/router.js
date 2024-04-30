@@ -28,15 +28,19 @@ document.addEventListener("DOMContentLoaded", () => {
     MoviePage.getMovieDetails(history.state).then((data) => {
       document.title = `${data.title} | The movie Database `
       MoviePage.displayShow(data);
+      MoviePage.displayAbout()
       MoviePage.getPeopleCredits(history.state).then((data) => {
         MoviePage.displayPeople(data);
       });
     });
+    MoviePage.recommendationsMovie(history.state).then((data)=>{
+      MoviePage.displayRec(data)
+    })
   }
 
   if (location.href == "http://127.0.0.1:5502/view/popularPeople.html") {
-    PopularPeople.getPopularPeople().then((data)=>{
-       PopularPeople.displayPopularPeople(data);
+    PopularPeople.getPopularPeople().then((data) => {
+      PopularPeople.displayPopularPeople(data);
     })
   }
 });
