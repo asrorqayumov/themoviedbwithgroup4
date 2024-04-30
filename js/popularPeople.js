@@ -34,7 +34,6 @@ export async function getPopularPeople() {
     let head = document.querySelector('.popular-movie-people1')
     let htmlshow = "";
     actors.forEach(actor => {
-        console.log(actor);
         htmlshow += `
         <div class="image-card">
         <img src="${config.BASE_IMG_URL + actor.profile_path}" alt="">

@@ -4,6 +4,7 @@ import config from "./config.js";
 export function calcVoteAverage(vote) {
   return Math.round(vote * 10);
 }
+
 export function navItem() {
   let film = document.querySelector(".film");
   let navClick = document.querySelector(".click");
@@ -181,6 +182,7 @@ export async function getTrendingMoviesDay() {
     console.error(err);
   }
 }
+
 export function displayTrendingMoviesDay(data) {
   //today movies
   let cardToday = document.querySelector(".card");
@@ -274,7 +276,6 @@ export function randomBg(data) {
   bg.style.backgroundImage = `url(${config.BASE_IMG_URL}${data[randomNum].poster_path})`;
 }
 
-
 export async function getPopularMovies() {
   try {
     let request = await fetch(
@@ -294,9 +295,9 @@ export async function getPopularMovies() {
     console.error("hello error");
   }
 }
+
 export function displaypopularMovies(movieList) {
   //this week movies
-  console.log(movieList);
   let cardList = document.querySelector(".card-popular");
   let html = "";
   movieList.forEach((movie) => {

@@ -2135,11 +2135,11 @@
   display: flex;
 }
 .conteiner .global-content .popular .toggleContainerr {
+  display: flex;
+  justify-content: center;
   position: relative;
   margin-left: 20px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  width: 200px;
+  width: 100px;
   border: 1px solid black;
   border-radius: 20px;
   background: white;
@@ -2150,15 +2150,15 @@
 .conteiner .global-content .popular .toggleContainerr::before {
   content: "";
   position: absolute;
-  width: 50%;
+  width: 100%;
   height: 100%;
   left: 0%;
   border-radius: 20px;
   background: blue;
   transition: all 0.3s;
 }
-.conteiner .global-content .popular .toggleCheckboxx:checked + .toggleContainerr::before {
-  left: 50%;
+.conteiner .global-content .popular .toggleCheckboxx:checked + .toggleContainerr:hover {
+  background-color: white;
 }
 .conteiner .global-content .popular .toggleContainerr span {
   padding: 6px;
@@ -2292,22 +2292,103 @@
   margin-left: 20px;
 }
 
-* {
+.container-popular-movie {
   box-sizing: border-box;
+  margin: 50px;
 }
-* .btn {
-  border-radius: 20px;
+.container-popular-movie input {
+  border-radius: 3px;
   border: 1px solid gray;
-  margin-left: 2px;
+  color: white;
   margin-top: 5px;
+}
+
+.accordion {
   background-color: white;
-}
-
-.container {
-  width: 17%;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 289px;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  display: flex;
+  margin-top: 10px;
   border-radius: 8px;
+  box-shadow: 0px 0px 20px rgba(107, 106, 106, 0.3);
 }
 
+.active,
+.accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  box-shadow: 0px 0px 5px rgba(107, 106, 106, 0.3);
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.accordion:after {
+  content: "➕";
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "➖";
+}
+
+.popular-movie-btn {
+  margin-top: 10px;
+  border-radius: 30px;
+  border: 1px solid gray;
+}
+
+.image-card {
+  max-width: 200px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-left: 50px;
+}
+
+.image-card img {
+  height: auto;
+}
+
+.card-content {
+  text-align: center;
+}
+
+.input-range {
+  width: 100%;
+}
+
+.input-text-key {
+  width: 100%;
+}
+
+.input-text {
+  width: 210px;
+  height: 20px;
+}
+
+.conteiner-movie {
+  padding-bottom: 50px;
+}
 .conteiner-movie .topnav {
   background-color: rgb(9, 9, 110);
   display: flex;
@@ -2386,84 +2467,87 @@
 .conteiner-movie .header {
   color: white;
 }
-.conteiner-movie .header .bg-img {
+.conteiner-movie .header .gradient {
+  width: 100%;
+  background-image: linear-gradient(to right, rgb(52, 51, 51), black);
+}
+.conteiner-movie .header .gradient .bg-img {
   display: flex;
   padding-top: 40px;
   margin-top: 30px;
-  background-image: url(/assets/img/Без\ названия.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-.conteiner-movie .header .bg-img .img-side {
+.conteiner-movie .header .gradient .bg-img .img-side {
   padding-left: 100px;
 }
-.conteiner-movie .header .bg-img .img-side .img-se {
+.conteiner-movie .header .gradient .bg-img .img-side .img-se {
   width: 300px;
   height: 450px;
 }
-.conteiner-movie .header .bg-img .text-side {
+.conteiner-movie .header .gradient .bg-img .text-side {
   margin-left: 80px;
   width: max-content;
   height: 500px;
 }
-.conteiner-movie .header .bg-img .text-side .pley-trailer {
+.conteiner-movie .header .gradient .bg-img .text-side .pley-trailer {
   padding-top: 20px;
 }
-.conteiner-movie .header .bg-img .text-side .pley-trailer .br {
+.conteiner-movie .header .gradient .bg-img .text-side .pley-trailer .br {
   font-size: 20px;
   background-color: rgb(3, 3, 111);
   padding: 15px 17px;
   border-radius: 50%;
   color: white;
 }
-.conteiner-movie .header .bg-img .text-side .pley-trailer button {
+.conteiner-movie .header .gradient .bg-img .text-side .pley-trailer button {
   border: none;
   background-color: white;
   margin-left: 20px;
 }
-.conteiner-movie .header .bg-img .text-side .user-score {
+.conteiner-movie .header .gradient .bg-img .text-side .user-score {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 400px;
 }
-.conteiner-movie .header .bg-img .text-side .user-score .d-flex {
+.conteiner-movie .header .gradient .bg-img .text-side .user-score .d-flex {
   display: flex;
 }
-.conteiner-movie .header .bg-img .text-side .user-score .d-flex p {
+.conteiner-movie .header .gradient .bg-img .text-side .user-score .d-flex p {
   font-size: 25px;
 }
-.conteiner-movie .header .bg-img .text-side .user-score .d-flex p:hover {
+.conteiner-movie .header .gradient .bg-img .text-side .user-score .d-flex p:hover {
   color: orange;
 }
-.conteiner-movie .header .bg-img .text-side .user-score .movie-btn {
+.conteiner-movie .header .gradient .bg-img .text-side .user-score .movie-btn {
   border-radius: 8px;
   padding: 0 12px;
   height: 30px;
 }
-.conteiner-movie .header .bg-img .text-side .owerview {
+.conteiner-movie .header .gradient .bg-img .text-side .owerview {
   position: relative;
   top: 40px;
 }
-.conteiner-movie .header .bg-img .text-side .owerview i {
+.conteiner-movie .header .gradient .bg-img .text-side .owerview i {
   font-weight: 900;
   font-size: 15px;
 }
-.conteiner-movie .header .bg-img .text-side .owerview h1 {
+.conteiner-movie .header .gradient .bg-img .text-side .owerview h1 {
   padding-top: 15px;
   padding-bottom: 15px;
 }
-.conteiner-movie .header .bg-img .text-side .owerview .follow {
+.conteiner-movie .header .gradient .bg-img .text-side .owerview .follow {
   width: 900px;
 }
-.conteiner-movie .header .bg-img .text-side .owerview .people {
+.conteiner-movie .header .gradient .bg-img .text-side .owerview .people {
   display: flex;
   justify-content: space-between;
   padding-top: 15px;
   width: 700px;
 }
-.conteiner-movie .header .bg-img .text-side .circle-progressbar {
+.conteiner-movie .header .gradient .bg-img .text-side .circle-progressbar {
   position: relative;
   margin-top: 20px;
 }
@@ -2476,13 +2560,13 @@
   }
 }
 @property --pgPercentage {
-  .conteiner-movie .header .bg-img .text-side .circle-progressbar {
+  .conteiner-movie .header .gradient .bg-img .text-side .circle-progressbar {
     syntax: "<number>";
     inherits: false;
     initial-value: 0;
   }
 }
-.conteiner-movie .header .bg-img .text-side .circle-progressbar div[role=progressbar] {
+.conteiner-movie .header .gradient .bg-img .text-side .circle-progressbar div[role=progressbar] {
   --size: 2.5rem;
   --bg: #081c22;
   --fg: rgba(20, 193, 20, 0.757);
@@ -2500,12 +2584,21 @@
   font-size: calc(var(--size) / 3.5);
   color: white;
 }
-.conteiner-movie .header .bg-img .text-side .circle-progressbar div[role=progressbar]::before {
+.conteiner-movie .header .gradient .bg-img .text-side .circle-progressbar div[role=progressbar]::before {
   counter-reset: percentage var(--value);
   content: counter(percentage) "%";
 }
-.conteiner-movie .cast {
-  padding-bottom: 50px;
+.conteiner-movie .about {
+  padding-left: 30px;
+  padding-top: 50px;
+}
+.conteiner-movie .about .profile i {
+  font-size: 30px;
+  padding-left: 10px;
+}
+.conteiner-movie .about .column .top {
+  padding-bottom: 15px;
+  padding-left: 10px;
 }
 .conteiner-movie .cast .video {
   display: flex;
@@ -2518,6 +2611,7 @@
 .conteiner-movie .cast .video .cardd .flex {
   display: flex;
   overflow-x: scroll;
+  overflow-y: hidden;
   padding-left: 20px;
 }
 .conteiner-movie .cast .video .cardd .flex .person {
@@ -2536,17 +2630,25 @@
   border-radius: 7px;
   border: 1px black;
 }
-.conteiner-movie .cast .video .top {
-  padding-left: 100px;
-  padding-top: 25px;
+.conteiner-movie .Recommendationss {
+  padding-left: 50px;
+  padding-top: 30px;
 }
-.conteiner-movie .cast .video .about {
-  padding-left: 30px;
-  padding-top: 50px;
+.conteiner-movie .Recommendationss h1 {
+  margin-left: 20px;
 }
-.conteiner-movie .cast .video .about .profile i {
-  font-size: 30px;
-  padding-left: 10px;
+.conteiner-movie .Recommendations {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.conteiner-movie .Recommendations .card-trend {
+  padding-left: 20px;
+}
+.conteiner-movie .Recommendations .card-trend img {
+  width: 250px;
+  height: 141px;
+  border-radius: 8px;
 }
 
 .popular-movie-people1 {

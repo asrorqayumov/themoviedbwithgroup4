@@ -13,25 +13,30 @@ export async function getMovieDetails(id) {
     );
 
     let data = await request.json();
-    displayAbout(data)
     return data;
   } catch (err) {
     console.error(err);
   }
 }
 export function displayShow(movie) {
-  let head = document.querySelector('.header')
+  let head = document.querySelector(".header");
   let htmlshow = "";
   htmlshow += `
   <div class="gradient">
-      <div style="background-image: url(${config.BASE_IMG_URL + movie.backdrop_path}) ;" class="bg-img" >
+      <div style="background-image: url(${
+        config.BASE_IMG_URL + movie.backdrop_path
+      }) ;" class="bg-img" >
         <div class="img-side">
-        <img class="img-se" src="${config.BASE_IMG_URL + movie.poster_path}" alt="">
+        <img class="img-se" src="${
+          config.BASE_IMG_URL + movie.poster_path
+        }" alt="">
         </div>
         <div class="text-side">
           <div class="movie">
             <h1>${movie.title}</h1>
-            <p><button>PG-14</button> ${movie.release_date} (${movie.origin_country[0]}) • Science Fiction , Adventure • 2h 47m</p>
+            <p><button>PG-14</button> ${movie.release_date} (${
+    movie.origin_country[0]
+  }) • Science Fiction , Adventure • 2h 47m</p>
           </div>
 
           <div class="user-score">
@@ -77,7 +82,7 @@ export function displayShow(movie) {
           </div>
         </div>
       </div>
-  </div>`
+  </div>`;
   head.innerHTML = htmlshow;
 }
 
@@ -102,49 +107,52 @@ export async function getPeopleCredits(id) {
 }
 
 export async function displayPeople(dataPeople) {
-  let flex = document.querySelector('.flex')
-  let people = ''
- await dataPeople.cast.forEach((data) => {
+  let flex = document.querySelector(".flex");
+  let people = "";
+  await dataPeople.cast.forEach((data) => {
     people += `
   <div class="person">
               <div class="border">
-                <img src="${data.profile_path ? config.BASE_IMG_URL + data.profile_path : '../assets/img/avatarProfile.png'}" alt="">
+                <img src="${
+                  data.profile_path
+                    ? config.BASE_IMG_URL + data.profile_path
+                    : "../assets/img/avatarProfile.png"
+                }" alt="">
                 <h2>${data.name}</h2>
                 <p>${data.character}</p>
               </div>
-            </div>`
+            </div>`;
   });
 
   flex.innerHTML = people;
 }
 export async function displayAbout(data) {
-  let about = document.querySelector('.about')
-  let base = ''
+  let about = document.querySelector(".about");
+  let base = "";
   base = `
   <div class="column">
   <div class="status top">
     <h3>status</h3>
-    <p>${data.status}</p>
+    <p>${data?.status}</p>
   </div>
   <div class="Original top">
     <h3>Original Language</h3>
-    <p>${data.original_language}</p>
+    <p>${data?.original_language}</p>
   </div>
   <div class="budget top">
     <h3>Budget</h3>
-    <p>${data.budget}$</p>
+    <p>${data?.budget}$</p>
   </div>
   <div class="Revenue top">
     <h3>Revenue</h3>
     <p>-</p>
   </div>
 
-</div>`
-about.innerHTML = base
+</div>`;
+  about.innerHTML = base;
 }
-'https://api.themoviedb.org/3/movie/movie_id/recommendations?language=en-US&page=1'
 
-export async function recommendationsMovie(id){
+export async function recommendationsMovie(id) {
   try {
     let request = await fetch(
       `${config.BACKEND_MAIN_URL}movie/${id}/recommendations?language=en-US&page=1`,
@@ -163,16 +171,21 @@ export async function recommendationsMovie(id){
   }
 }
 
-export async function displayRec(data){
-  let recommendations = document.querySelector('.Recommendations')
-  let total = ''
-  data.forEach((e)=>{
+export async function displayRec(data) {
+  console.log(data);
+  let recommendations = document.querySelector(".Recommendations");
+  let total = "";
+  if (data.length == 0) {
+    recommendations.innerHTML = "There is no any recommendation ))";
+  } else {
+    data.forEach((e) => {
       total += `
-  <div class="card-trend">
-  <img src="${config.BASE_IMG_URL+e.backdrop_path}" alt="">
-  <p>${e.original_title}</p>
-</div>`
-  })
+    <div class="card-trend">
+    <img src="${config.BASE_IMG_URL + e.backdrop_path}" alt="">
+    <p>${e.original_title}</p>
+  </div>`;
+  recommendations.innerHTML = total;
+    });
+  }
 
-recommendations.innerHTML = total
 }

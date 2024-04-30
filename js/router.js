@@ -5,30 +5,33 @@ import * as PopularPeople from "./popularPeople.js";
 window.addEventListener("popstate", (e) => {
   location.reload();
 });
+
 document.addEventListener("DOMContentLoaded", () => {
+  // nav code
+  HomePage.navItem();
+  
   if (
-    location.href == "http://127.0.0.1:5501/view/" ||
-    location.href == "http://127.0.0.1:5501/view/index.html"
+    location.href == "http://127.0.0.1:5502/view/" ||
+    location.href == "http://127.0.0.1:5502/view/index.html"
   ) {
     HomePage.getTrendingMovies().then((data) => {
       HomePage.displayTrendingMovies(data);
       HomePage.randomBg(data);
-      HomePage.navItem();
+
     });
     HomePage.getTrendingMoviesDay().then((data) => {
       HomePage.displayTrendingMoviesDay(data);
-      HomePage.setEventImg();
     });
     HomePage.getPopularMovies().then((data) => {
       HomePage.displaypopularMovies(data);
+      HomePage.setEventImg();
     });
   }
-  if (location.href == "http://127.0.0.1:5501/view/movie.html") {
-    HomePage.navItem();
+  if (location.href == "http://127.0.0.1:5502/view/movie.html") {
     MoviePage.getMovieDetails(history.state).then((data) => {
       document.title = `${data.title} | The movie Database `
       MoviePage.displayShow(data);
-      MoviePage.displayAbout()
+      MoviePage.displayAbout(data)
       MoviePage.getPeopleCredits(history.state).then((data) => {
         MoviePage.displayPeople(data);
       });
@@ -44,3 +47,4 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 });
+
