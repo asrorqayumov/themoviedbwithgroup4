@@ -118,7 +118,6 @@ export async function displayPeople(dataPeople) {
   flex.innerHTML = people;
 }
 export async function displayAbout(data) {
-  console.log(data);
   let about = document.querySelector('.about')
   let base = ''
   base = `
@@ -144,3 +143,36 @@ export async function displayAbout(data) {
 about.innerHTML = base
 }
 'https://api.themoviedb.org/3/movie/movie_id/recommendations?language=en-US&page=1'
+
+export async function recommendationsMovie(id){
+  try {
+    let request = await fetch(
+      `${config.BACKEND_MAIN_URL}movie/${id}/recommendations?language=en-US&page=1`,
+      {
+        headers: {
+          accept: "application/json",
+          Authorization: config.TOKEN,
+        },
+      }
+    );
+
+    let data = await request.json();
+    return data.results;
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+export async function displayRec(data){
+  let recommendations = document.querySelector('.Recommendations')
+  let total = ''
+  data.forEach((e)=>{
+      total += `
+  <div class="card-trend">
+  <img src="${config.BASE_IMG_URL+e.backdrop_path}" alt="">
+  <p>${e.original_title}</p>
+</div>`
+  })
+
+recommendations.innerHTML = total
+}
